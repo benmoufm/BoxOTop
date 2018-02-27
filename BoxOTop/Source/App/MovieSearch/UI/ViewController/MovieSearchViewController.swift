@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MovieSearchViewController.swift
 //  BoxOTop
 //
 //  Created by Mélodie Benmouffek on 26/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
