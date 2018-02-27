@@ -33,6 +33,7 @@
 		3C5417F720458F7000C6C725 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F620458F7000C6C725 /* RepositoryFactory.swift */; };
 		3C5417F92045918F00C6C725 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F82045918F00C6C725 /* Result.swift */; };
 		3C5417FB2045936300C6C725 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417FA2045936300C6C725 /* HttpRequest.swift */; };
+		3C5417FD2045947C00C6C725 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417FC2045947C00C6C725 /* HttpManager.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		3C5417F620458F7000C6C725 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
 		3C5417F82045918F00C6C725 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3C5417FA2045936300C6C725 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		3C5417FC2045947C00C6C725 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				3C5417F120458F1100C6C725 /* Repositories */,
 				3C5417EE2045784B00C6C725 /* Entities */,
 				3C5417FA2045936300C6C725 /* HttpRequest.swift */,
+				3C5417FC2045947C00C6C725 /* HttpManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				3C5417E2204570F900C6C725 /* MovieSearchCellViewModelMapper.swift in Sources */,
 				3C5417CF204567D600C6C725 /* MovieSearchControllerViewModel.swift in Sources */,
 				3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */,
+				3C5417FD2045947C00C6C725 /* HttpManager.swift in Sources */,
 				3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */,
 				3C5417CB204564BC00C6C725 /* MainCoordinator.swift in Sources */,
 				3C5417F720458F7000C6C725 /* RepositoryFactory.swift in Sources */,
