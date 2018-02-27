@@ -25,6 +25,7 @@
 		3C5417DE204570D800C6C725 /* MovieSearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417DD204570D800C6C725 /* MovieSearchCellViewModel.swift */; };
 		3C5417E0204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417DF204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift */; };
 		3C5417E2204570F900C6C725 /* MovieSearchCellViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417E1204570F900C6C725 /* MovieSearchCellViewModelMapper.swift */; };
+		3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3C5417DD204570D800C6C725 /* MovieSearchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchCellViewModel.swift; sourceTree = "<group>"; };
 		3C5417DF204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewModelMapper.swift; sourceTree = "<group>"; };
 		3C5417E1204570F900C6C725 /* MovieSearchCellViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchCellViewModelMapper.swift; sourceTree = "<group>"; };
+		3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registerable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		3C5417BD2045625F00C6C725 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				3C5417E2204570F900C6C725 /* MovieSearchCellViewModelMapper.swift in Sources */,
 				3C5417CF204567D600C6C725 /* MovieSearchControllerViewModel.swift in Sources */,
 				3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */,
+				3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */,
 				3C5417CB204564BC00C6C725 /* MainCoordinator.swift in Sources */,
 				3C5417D820456A7E00C6C725 /* Startable.swift in Sources */,
 				3C5417CD204567C600C6C725 /* MovieSearchControllerViewModelMapper.swift in Sources */,
