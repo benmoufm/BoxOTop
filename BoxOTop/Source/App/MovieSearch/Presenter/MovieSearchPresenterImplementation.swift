@@ -10,11 +10,13 @@ import Foundation
 
 class MovieSearchPresenterImplementation: MovieSearchPresenter {
     private unowned let viewContract: MovieSearchViewContract
+    private let moviesRepository: MoviesRepository
 
     // MARK: LifeCycle
 
-    init(viewContract: MovieSearchViewContract) {
+    init(viewContract: MovieSearchViewContract, moviesRepository: MoviesRepository) {
         self.viewContract = viewContract
+        self.moviesRepository = moviesRepository
     }
 
     // MARK: - Startable
@@ -28,7 +30,14 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
     // MARK: - private methods
 
     private func computeAndDisplayViewModel() {
-        let viewModel = MovieSearchControllerViewModelMapper(cells: []).map()
-        viewContract.configure(with: viewModel)
+        moviesRepository.getMovies(with: "Avatar") { (result) in
+            switch result {
+            case .value(let data):
+                let viewModel = MovieSearchControllerViewModelMapper(cells: data).map()
+                self.viewContract.configure(with: viewModel)
+            case .error(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
 }

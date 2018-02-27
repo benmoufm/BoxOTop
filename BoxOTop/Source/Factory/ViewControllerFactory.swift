@@ -15,7 +15,10 @@ final class ViewControllerFactory {
 
     func movieSearchViewController() -> MovieSearchViewController {
         let movieSearchViewController = MovieSearchViewController()
-        let presenter = MovieSearchPresenterImplementation(viewContract: movieSearchViewController)
+        let presenter = MovieSearchPresenterImplementation(
+            viewContract: movieSearchViewController,
+            moviesRepository: RepositoryFactory.instance.moviesRepository()
+        )
         movieSearchViewController.presenter = presenter
         return movieSearchViewController
     }
