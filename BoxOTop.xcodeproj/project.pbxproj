@@ -28,9 +28,11 @@
 		3C5417E52045736B00C6C725 /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417E42045736B00C6C725 /* MovieSearchTableViewCell.swift */; };
 		3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */; };
 		3C5417F02045787300C6C725 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417EF2045787300C6C725 /* Movie.swift */; };
+		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C231743AC1A7CA12A84C7A1 /* Pods-BoxOTop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.release.xcconfig"; sourceTree = "<group>"; };
 		3C54176F20449D6900C6C725 /* BoxOTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxOTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C54177220449D6900C6C725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C54177420449D6900C6C725 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		3C5417E42045736B00C6C725 /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
 		3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registerable.swift"; sourceTree = "<group>"; };
 		3C5417EF2045787300C6C725 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
+		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,8 @@
 			children = (
 				3C54177120449D6900C6C725 /* BoxOTop */,
 				3C54177020449D6900C6C725 /* Products */,
+				E926A731C10CFFD31668BB99 /* Pods */,
+				CF0F7E75ED257535E3502F7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,6 +271,23 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		CF0F7E75ED257535E3502F7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E926A731C10CFFD31668BB99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */,
+				2C231743AC1A7CA12A84C7A1 /* Pods-BoxOTop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,9 +295,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C54178420449D6900C6C725 /* Build configuration list for PBXNativeTarget "BoxOTop" */;
 			buildPhases = (
+				8088D21B1547B93187F3777C /* [CP] Check Pods Manifest.lock */,
 				3C54176B20449D6900C6C725 /* Sources */,
 				3C54176C20449D6900C6C725 /* Frameworks */,
 				3C54176D20449D6900C6C725 /* Resources */,
+				672CAD3C07476BBEA168B795 /* [CP] Embed Pods Frameworks */,
+				9EC44EF45F33BAD50CE314C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +356,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		672CAD3C07476BBEA168B795 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8088D21B1547B93187F3777C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoxOTop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EC44EF45F33BAD50CE314C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C54176B20449D6900C6C725 /* Sources */ = {
@@ -480,6 +563,7 @@
 		};
 		3C54178520449D6900C6C725 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +578,7 @@
 		};
 		3C54178620449D6900C6C725 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C231743AC1A7CA12A84C7A1 /* Pods-BoxOTop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
