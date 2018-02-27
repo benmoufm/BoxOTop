@@ -28,6 +28,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
     // MARK: - private methods
 
     private func computeAndDisplayViewModel() {
-        // TODO: (Mélodie Benmouffek) Guard let required properties
+        let viewModel = MovieSearchControllerViewModelMapper(cells: []).map()
+        viewContract.configure(with: viewModel)
     }
 }

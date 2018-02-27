@@ -12,16 +12,46 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     var presenter: MovieSearchPresenter?
 
+    // MARK: - Private properties
+
+    private var tableView = UITableView()
+    private var dataSource = MovieSearchTableViewDataSource()
+
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         presenter?.start()
     }
 
     // MARK: - MovieSearchViewContract
 
     func configure(with viewModel: MovieSearchControllerViewModel) {
-        // TODO: (Mélodie Benmouffek) Configure with view model
+        dataSource.update(with: viewModel.tableView)
+        tableView.reloadData()
+    }
+
+    // MARK: - Private methods
+
+    private func setupTableView() {
+        dataSource.configure(tableView)
+        tableView.delegate = dataSource
+        tableView.dataSource = dataSource
+    }
+
+    private func setupLayout() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    }
+
+    private func setup() {
+        view.backgroundColor = UIColor.white
+        setupTableView()
+        setupLayout()
     }
 }
