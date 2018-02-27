@@ -31,6 +31,7 @@
 		3C5417F320458F3D00C6C725 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F220458F3D00C6C725 /* MoviesRepository.swift */; };
 		3C5417F520458F6000C6C725 /* MoviesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F420458F6000C6C725 /* MoviesRepositoryImplementation.swift */; };
 		3C5417F720458F7000C6C725 /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F620458F7000C6C725 /* RepositoryFactory.swift */; };
+		3C5417F92045918F00C6C725 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417F82045918F00C6C725 /* Result.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		3C5417F220458F3D00C6C725 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		3C5417F420458F6000C6C725 /* MoviesRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryImplementation.swift; sourceTree = "<group>"; };
 		3C5417F620458F7000C6C725 /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
+		3C5417F82045918F00C6C725 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */,
+				3C5417F82045918F00C6C725 /* Result.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */,
 				3C5417CB204564BC00C6C725 /* MainCoordinator.swift in Sources */,
 				3C5417F720458F7000C6C725 /* RepositoryFactory.swift in Sources */,
+				3C5417F92045918F00C6C725 /* Result.swift in Sources */,
 				3C5417E52045736B00C6C725 /* MovieSearchTableViewCell.swift in Sources */,
 				3C5417D820456A7E00C6C725 /* Startable.swift in Sources */,
 				3C5417CD204567C600C6C725 /* MovieSearchControllerViewModelMapper.swift in Sources */,
