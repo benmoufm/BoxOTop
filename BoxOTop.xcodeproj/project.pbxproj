@@ -11,6 +11,7 @@
 		3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54177420449D6900C6C725 /* MovieSearchViewController.swift */; };
 		3C54177D20449D6900C6C725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C54177C20449D6900C6C725 /* Assets.xcassets */; };
 		3C54178020449D6900C6C725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C54177E20449D6900C6C725 /* LaunchScreen.storyboard */; };
+		3C5417C72045641000C6C725 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417C62045641000C6C725 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3C54177C20449D6900C6C725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C54177F20449D6900C6C725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C54178120449D6900C6C725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5417C62045641000C6C725 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		3C5417BC2045625900C6C725 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				3C5417C52045640200C6C725 /* Shared */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -179,6 +182,14 @@
 			children = (
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		3C5417C52045640200C6C725 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3C5417C62045641000C6C725 /* Coordinator.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			files = (
 				3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */,
 				3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */,
+				3C5417C72045641000C6C725 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
