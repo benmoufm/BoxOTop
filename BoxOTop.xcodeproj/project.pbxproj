@@ -12,6 +12,7 @@
 		3C54177D20449D6900C6C725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C54177C20449D6900C6C725 /* Assets.xcassets */; };
 		3C54178020449D6900C6C725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C54177E20449D6900C6C725 /* LaunchScreen.storyboard */; };
 		3C5417C72045641000C6C725 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417C62045641000C6C725 /* Coordinator.swift */; };
+		3C5417C92045645300C6C725 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417C82045645300C6C725 /* ViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3C54177F20449D6900C6C725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C54178120449D6900C6C725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C5417C62045641000C6C725 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3C5417C82045645300C6C725 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		3C5417B82045624300C6C725 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				3C5417C82045645300C6C725 /* ViewControllerFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */,
+				3C5417C92045645300C6C725 /* ViewControllerFactory.swift in Sources */,
 				3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */,
 				3C5417C72045641000C6C725 /* Coordinator.swift in Sources */,
 			);
