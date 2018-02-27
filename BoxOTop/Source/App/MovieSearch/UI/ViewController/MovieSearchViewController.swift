@@ -8,18 +8,20 @@
 
 import UIKit
 
-class MovieSearchViewController: UIViewController {
+class MovieSearchViewController: UIViewController, MovieSearchViewContract {
+
+    var presenter: MovieSearchPresenter?
+
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        presenter?.start()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - MovieSearchViewContract
+
+    func configure(with viewModel: MovieSearchControllerViewModel) {
+        // TODO: (Mélodie Benmouffek) Configure with view model
     }
-
-
 }
-
