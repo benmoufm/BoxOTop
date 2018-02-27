@@ -12,13 +12,16 @@ import UIKit
 class MainCoordinator: Coordinator {
 
     let window: UIWindow
+    let navigationController: UINavigationController
 
     init(window: UIWindow) {
         self.window = window
+        self.navigationController = UINavigationController()
     }
 
     func start() {
         let movieSearchViewController = ViewControllerFactory.instance.movieSearchViewController()
-        window.rootViewController = movieSearchViewController
+        navigationController.pushViewController(movieSearchViewController, animated: false)
+        window.rootViewController = navigationController
     }
 }

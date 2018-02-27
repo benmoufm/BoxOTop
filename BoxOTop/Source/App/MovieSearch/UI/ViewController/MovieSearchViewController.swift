@@ -16,6 +16,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     private var tableView = UITableView()
     private var dataSource = MovieSearchTableViewDataSource()
+    private let searchBar = UISearchBar(frame: CGRect(x: 40, y: 100, width: 250, height: 100))
 
     // MARK: - UIViewController
 
@@ -47,6 +48,14 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     // MARK: - Private methods
 
+    private func setupNavigationBar() {
+        navigationItem.title = "📺 Box Office"
+        navigationController?.navigationBar.barTintColor = UIColor.green
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        searchBar.placeholder = "Search for a movie..."
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+    }
+
     private func setupTableView() {
         dataSource.configure(tableView)
         tableView.delegate = dataSource
@@ -64,6 +73,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     private func setup() {
         view.backgroundColor = UIColor.white
+        setupNavigationBar()
         setupTableView()
         setupLayout()
     }
