@@ -9,5 +9,6 @@
 import Foundation
 
 struct MovieSearchCellViewModel {
-
+    let id: String
+    let title: String
 }

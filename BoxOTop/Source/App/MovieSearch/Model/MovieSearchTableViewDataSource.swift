@@ -16,7 +16,7 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     // MARK: - MovieSearchTableViewDataSource
 
     func configure(_ tableView: UITableView) {
-
+        tableView.register(class: MovieSearchTableViewCell.self)
     }
 
     func update(with viewModel: MovieSearchTableViewModel) {
@@ -30,6 +30,8 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: MovieSearchTableViewCell = tableView.dequeueCell(at: indexPath)
+        cell.configure(with: viewModel.cells[indexPath.row])
+        return cell
     }
 }

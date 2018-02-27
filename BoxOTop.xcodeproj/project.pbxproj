@@ -26,6 +26,7 @@
 		3C5417E0204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417DF204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift */; };
 		3C5417E2204570F900C6C725 /* MovieSearchCellViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417E1204570F900C6C725 /* MovieSearchCellViewModelMapper.swift */; };
 		3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */; };
+		3C5417E52045736B00C6C725 /* MovieSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417E42045736B00C6C725 /* MovieSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3C5417DF204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewModelMapper.swift; sourceTree = "<group>"; };
 		3C5417E1204570F900C6C725 /* MovieSearchCellViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchCellViewModelMapper.swift; sourceTree = "<group>"; };
 		3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registerable.swift"; sourceTree = "<group>"; };
+		3C5417E42045736B00C6C725 /* MovieSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		3C5417C02045627A00C6C725 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C5417E32045735400C6C725 /* View */,
 				3C5417C22045628300C6C725 /* ViewController */,
 				3C5417D0204569BD00C6C725 /* MovieSearchViewContract.swift */,
 			);
@@ -240,6 +243,14 @@
 				3C5417D720456A7E00C6C725 /* Startable.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		3C5417E32045735400C6C725 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C5417E42045736B00C6C725 /* MovieSearchTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 				3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */,
 				3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */,
 				3C5417CB204564BC00C6C725 /* MainCoordinator.swift in Sources */,
+				3C5417E52045736B00C6C725 /* MovieSearchTableViewCell.swift in Sources */,
 				3C5417D820456A7E00C6C725 /* Startable.swift in Sources */,
 				3C5417CD204567C600C6C725 /* MovieSearchControllerViewModelMapper.swift in Sources */,
 				3C5417D520456A1700C6C725 /* MovieSearchPresenterImplementation.swift in Sources */,
