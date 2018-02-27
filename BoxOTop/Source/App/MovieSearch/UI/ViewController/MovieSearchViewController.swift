@@ -16,7 +16,8 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     private var tableView = UITableView()
     private var dataSource = MovieSearchTableViewDataSource()
-    private let searchBar = UISearchBar(frame: CGRect(x: 40, y: 100, width: 250, height: 100))
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchButton = UIButton()
 
     // MARK: - UIViewController
 
@@ -46,14 +47,32 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
         present(alert, animated: true, completion: nil)
     }
 
+    // MARK: - Action methods
+
+    @objc func toggleSearchBarDown() {
+        navigationItem.searchController = searchController
+        navigationItem.searchController?.searchBar.placeholder = "Search for a movie..."
+        (navigationItem.searchController?.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.white
+        navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem()
+        UIView.animate(withDuration: 0.3) {
+            self.navigationItem.searchController?.searchBar.becomeFirstResponder()
+            self.view.layoutIfNeeded()
+        }
+    }
+
     // MARK: - Private methods
+
+    private func setupSearchButton() {
+        searchButton.setImage(#imageLiteral(resourceName: "searchIcon"), for: .normal)
+        searchButton.addTarget(self, action: #selector(toggleSearchBarDown), for: .touchUpInside)
+    }
 
     private func setupNavigationBar() {
         navigationItem.title = "📺 Box Office"
         navigationController?.navigationBar.barTintColor = UIColor.green
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        searchBar.placeholder = "Search for a movie..."
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
 
     private func setupTableView() {
@@ -73,6 +92,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     private func setup() {
         view.backgroundColor = UIColor.white
+        setupSearchButton()
         setupNavigationBar()
         setupTableView()
         setupLayout()
