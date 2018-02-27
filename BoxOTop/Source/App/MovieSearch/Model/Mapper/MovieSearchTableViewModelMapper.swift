@@ -9,7 +9,12 @@
 import Foundation
 
 struct MovieSearchTableViewModelMapper {
+    let cells: [Movie]
+
     func map() -> MovieSearchTableViewModel {
-        return MovieSearchTableViewModel.empty
+        let moviesCellViewModel = cells.map {
+            return MovieSearchCellViewModelMapper(id: $0.id, title: $0.title).map()
+        }
+        return MovieSearchTableViewModel(cells: moviesCellViewModel)
     }
 }
