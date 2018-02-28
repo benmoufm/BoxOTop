@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MoviesRepository {
-    func getMovies(with query: String,_ completion: ((Result<[Movie]>) -> Void)?)
+    func getMovies(with query: String,_ completion: ((Result<SearchQueryResult>) -> Void)?)
 }

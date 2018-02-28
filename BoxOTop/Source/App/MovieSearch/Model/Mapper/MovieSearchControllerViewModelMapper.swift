@@ -10,10 +10,11 @@ import Foundation
 
 struct MovieSearchControllerViewModelMapper {
     let cells: [Movie]
+    let totalResults: Int
 
     func map() -> MovieSearchControllerViewModel {
         return MovieSearchControllerViewModel(
-            tableView: MovieSearchTableViewModelMapper(cells: cells).map()
+            tableView: MovieSearchTableViewModelMapper(cells: cells, totalResults: totalResults).map()
         )
     }
 }

@@ -36,7 +36,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 self.viewContract.hideLoading()
                 switch result {
                 case .value(let data):
-                    let viewModel = MovieSearchControllerViewModelMapper(cells: data).map()
+                    let viewModel = MovieSearchControllerViewModelMapper(cells: data.movies, totalResults: data.total).map()
                     self.viewContract.configure(with: viewModel)
                     completion?(true)
                 case .error(let error):
@@ -50,7 +50,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
     // MARK: - private methods
 
     private func computeAndDisplayViewModel() {
-        let viewModel = MovieSearchControllerViewModelMapper(cells: []).map()
+        let viewModel = MovieSearchControllerViewModelMapper(cells: [], totalResults: 0).map()
         self.viewContract.configure(with: viewModel)
     }
 }

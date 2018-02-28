@@ -16,7 +16,8 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     // MARK: - MovieSearchTableViewDataSource
 
     func configure(_ tableView: UITableView) {
-        tableView.register(class: MovieSearchTableViewCell.self)
+        tableView.register(class: MovieTableViewCell.self)
+        tableView.register(class: LoadTableViewCell.self)
     }
 
     func update(with viewModel: MovieSearchTableViewModel) {
@@ -30,17 +31,36 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MovieSearchTableViewCell = tableView.dequeueCell(at: indexPath)
-        cell.configure(with: viewModel.cells[indexPath.row])
-        if indexPath.row % 2 == 1 {
-            cell.backgroundColor = UIColor.movieCardColor
-        } else {
-            cell.backgroundColor = UIColor.backgroundColor
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .movieCell(let movieCellViewModel):
+            let cell: MovieTableViewCell = tableView.dequeueCell(at: indexPath)
+            cell.configure(with: movieCellViewModel)
+            colorCell(cell, at: indexPath)
+            return cell
+        case .loadCell:
+            let cell: LoadTableViewCell = tableView.dequeueCell(at: indexPath)
+            colorCell(cell, at: indexPath)
+            return cell
         }
-        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        switch viewModel.cells[indexPath.row] {
+        case .movieCell:
+            return 130
+        case .loadCell:
+            return 50
+        }
+    }
+
+    // MARK: - Private methods
+
+    private func colorCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
+        if indexPath.row % 2 == 1 {
+            cell.backgroundColor = UIColor.unevenMovieSearchTableViewCellColor
+        } else {
+            cell.backgroundColor = UIColor.evenMovieSearchTableViewCellColor
+        }
     }
 }

@@ -19,17 +19,15 @@ class MoviesRepositoryImplementation: MoviesRepository {
         httpManager = HttpManager(sessionManager: sessionManager)
     }
 
-    func getMovies(with query: String,_ completion: ((Result<[Movie]>) -> Void)?) {
+    func getMovies(with query: String,_ completion: ((Result<SearchQueryResult>) -> Void)?) {
         let httpRequest = HttpRequest(parameters: ["s":query])
         httpManager.execute(httpRequest: httpRequest) { result -> Void in
-            let resultMovies = result.map { (json) -> [Movie] in
-                guard let jsonMovies = json["Search"].array else { throw CustomErrors.unexpectedJSONFormat }
-                let movies = try jsonMovies
-                    .map { try RestMovie(json: $0) }
-                    .map { MovieMapper(restMovie: $0).map() }
-                return movies
+            let searchResult = result.map {
+                return try SearchQueryResultMapper(
+                    restSearchQueryResult: RestSearchQueryResult(query: query, json: $0)
+                    ).map()
             }
-            completion?(resultMovies)
+            completion?(searchResult)
         }
     }
 }

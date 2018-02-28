@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class MovieSearchTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell {
 
     // MARK: - Private properties
 
@@ -29,9 +29,9 @@ class MovieSearchTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
 
-    // MARK: - MovieSearchTableViewCell
+    // MARK: - MovieTableViewCell
 
-    func configure(with viewModel: MovieSearchCellViewModel) {
+    func configure(with viewModel: MovieCellViewModel) {
         if let url = URL(string: viewModel.posterURL) {
             posterImageView.sd_setImage(
                 with: url,

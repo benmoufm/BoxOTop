@@ -10,15 +10,19 @@ import Foundation
 
 struct MovieSearchTableViewModelMapper {
     let cells: [Movie]
+    let totalResults: Int
 
     func map() -> MovieSearchTableViewModel {
-        let moviesCellViewModel = cells.map {
-            return MovieSearchCellViewModelMapper(
+        var moviesCellViewModel: [MovieSearchCellViewModel] = cells.map {
+            return .movieCell(MovieCellViewModelMapper(
                 id: $0.id,
                 posterURL: $0.posterURL,
                 title: $0.title,
                 year: $0.year
-                ).map()
+                ).map())
+        }
+        if moviesCellViewModel.count != totalResults {
+            moviesCellViewModel.append(.loadCell( LoadViewModelMapper().map() ))
         }
         return MovieSearchTableViewModel(cells: moviesCellViewModel)
     }

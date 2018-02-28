@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct MovieSearchCellViewModelMapper {
+struct MovieCellViewModelMapper {
     let id: String
     let posterURL: String
     let title: String
     let year: String
 
-    func map() -> MovieSearchCellViewModel {
-        return MovieSearchCellViewModel(id: id, posterURL: posterURL, title: title, year: year)
+    func map() -> MovieCellViewModel {
+        return MovieCellViewModel(id: id, posterURL: posterURL, title: title, year: year)
     }
 }
