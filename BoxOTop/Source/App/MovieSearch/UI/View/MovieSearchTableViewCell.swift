@@ -32,7 +32,18 @@ class MovieSearchTableViewCell: UITableViewCell {
     // MARK: - MovieSearchTableViewCell
 
     func configure(with viewModel: MovieSearchCellViewModel) {
-        if let url = URL(string: viewModel.posterURL) { posterImageView.sd_setImage(with: url, completed: nil) }
+        if let url = URL(string: viewModel.posterURL) {
+            posterImageView.sd_setImage(
+                with: url,
+                placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),
+                options: .highPriority,
+                completed: { (image, error, imageCacheType, url) in
+                    if image == nil {
+                        self.posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
+                        self.posterImageView.tintColor = UIColor.mainColor
+                    }
+            })
+        }
         titleLabel.text = viewModel.title
         yearLabel.text = viewModel.year
         setup()
