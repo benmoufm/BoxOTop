@@ -14,6 +14,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
 
     // MARK: - Private properties
 
+    private var welcomeLabel = UILabel()
     private var tableView = UITableView()
     private var dataSource = MovieSearchTableViewDataSource()
     private let searchController = UISearchController(searchResultsController: nil)
@@ -70,6 +71,8 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         guard let searchBarText = searchBar.text else { return }
             presenter?.updateViewModel(with: searchBarText, { (success) in
                 if success {
+                    self.tableView.isHidden = false
+                    self.welcomeLabel.isHidden = true
                     self.tableView.reloadData()
                 }
             })
@@ -106,7 +109,16 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
 
+    private func setupWelcomeLabel() {
+        welcomeLabel.text = "Welcome to BoxOfice !\n Search for your favorite movies !"
+        welcomeLabel.textColor = UIColor.mainColor
+        welcomeLabel.numberOfLines = 2
+        welcomeLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+        welcomeLabel.textAlignment = .center
+    }
+
     private func setupTableView() {
+        tableView.isHidden = true
         dataSource.configure(tableView)
         tableView.delegate = dataSource
         tableView.dataSource = dataSource
@@ -120,9 +132,14 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     }
 
     private func setupLayout() {
+        view.addSubview(welcomeLabel)
         view.addSubview(tableView)
         view.addSubview(activityIndicatorBackgroundView)
         view.addSubview(activityIndicator)
+
+        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+        welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        welcomeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -146,6 +163,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         setupSearchButton()
         setupNavigationBar()
         setupActivityIndicatorView()
+        setupWelcomeLabel()
         setupTableView()
         setupLayout()
     }

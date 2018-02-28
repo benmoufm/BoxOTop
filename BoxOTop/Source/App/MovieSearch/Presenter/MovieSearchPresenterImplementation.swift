@@ -50,14 +50,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
     // MARK: - private methods
 
     private func computeAndDisplayViewModel() {
-        moviesRepository.getMovies(with: "Avatar") { (result) in
-            switch result {
-            case .value(let data):
-                let viewModel = MovieSearchControllerViewModelMapper(cells: data).map()
-                self.viewContract.configure(with: viewModel)
-            case .error(let error):
-                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
-            }
-        }
+        let viewModel = MovieSearchControllerViewModelMapper(cells: []).map()
+        self.viewContract.configure(with: viewModel)
     }
 }
