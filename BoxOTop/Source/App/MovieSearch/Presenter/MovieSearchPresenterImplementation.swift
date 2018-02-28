@@ -11,6 +11,7 @@ import Foundation
 class MovieSearchPresenterImplementation: MovieSearchPresenter {
     private unowned let viewContract: MovieSearchViewContract
     private let moviesRepository: MoviesRepository
+    private var searchQuery: SearchQueryResult?
 
     // MARK: LifeCycle
 
@@ -27,7 +28,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
 
     // MARK: - MovieSearchPresenter
 
-    func updateViewModel(with query: String, _ completion: ((Bool) -> Void)?) {
+    func searchMovies(with query: String, _ completion: ((Bool) -> Void)?) {
         if query.count < 2 {
             viewContract.displayAlertPopUp(title: "Error", message: "Query too short")
         } else {
@@ -36,8 +37,8 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 self.viewContract.hideLoading()
                 switch result {
                 case .value(let data):
-                    let viewModel = MovieSearchControllerViewModelMapper(cells: data.movies, totalResults: data.total).map()
-                    self.viewContract.configure(with: viewModel)
+                    self.searchQuery = data
+                    self.computeAndDisplayViewModel()
                     completion?(true)
                 case .error(let error):
                     self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
@@ -47,10 +48,26 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
         }
     }
 
+    func loadMoreCells(_ completion: ((Bool) -> Void)?) {
+        guard let searchQuery = searchQuery else { return }
+        moviesRepository.getMovies(at: searchQuery.currentPage+1) { (result) in
+            switch result {
+            case .value(let data):
+                self.searchQuery = data
+                self.computeAndDisplayViewModel()
+                completion?(true)
+            case .error(let error):
+                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                completion?(false)
+            }
+        }
+    }
+
     // MARK: - private methods
 
     private func computeAndDisplayViewModel() {
-        let viewModel = MovieSearchControllerViewModelMapper(cells: [], totalResults: 0).map()
+        guard let searchQuery = searchQuery else { return }
+        let viewModel = MovieSearchControllerViewModelMapper(cells: searchQuery.movies, totalResults: searchQuery.total).map()
         self.viewContract.configure(with: viewModel)
     }
 }

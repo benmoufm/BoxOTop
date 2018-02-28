@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoadTableViewCell: UITableViewCell {
+class LoadTableViewCell: UITableViewCell, Loadable {
 
     // MARK: - Private properties
 
@@ -28,9 +28,24 @@ class LoadTableViewCell: UITableViewCell {
         setup()
     }
 
+    // MARK: - Loadable
+
+    func displayLoading() {
+        loadLabel.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+
+    func hideLoading() {
+        loadLabel.isHidden = false
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
+
     // MARK: - Private methods
 
     private func setupLoadLabel() {
+        loadLabel.isHidden = false
         loadLabel.text = "..."
         loadLabel.textColor = UIColor.darkText
         loadLabel.font = UIFont.boldSystemFont(ofSize: 25.0)

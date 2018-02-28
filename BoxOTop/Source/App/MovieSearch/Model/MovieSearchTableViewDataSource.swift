@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
+protocol MovieSearchTableViewDataSourceDelegate: class {
+    func loadMoreCells()
+}
+
 class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     var viewModel: MovieSearchTableViewModel = .empty
+    weak var delegate: MovieSearchTableViewDataSourceDelegate?
 
     // MARK: - MovieSearchTableViewDataSource
 
@@ -40,6 +45,7 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
             return cell
         case .loadCell:
             let cell: LoadTableViewCell = tableView.dequeueCell(at: indexPath)
+            cell.hideLoading()
             colorCell(cell, at: indexPath)
             return cell
         }
@@ -51,6 +57,21 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
             return 130
         case .loadCell:
             return 50
+        }
+    }
+
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .loadCell:
+            guard let cell = tableView.cellForRow(at: indexPath) as? LoadTableViewCell else { return }
+            cell.displayLoading()
+            delegate?.loadMoreCells()
+        case .movieCell:
+            // TODO (Mélodie Benmouffek) 01/03/2018 When movie cell selected do
+            break
         }
     }
 

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol MovieSearchPresenter: Startable {
-    func updateViewModel(with query: String, _ completion: ((Bool) -> Void)?)
+    func searchMovies(with query: String, _ completion: ((Bool) -> Void)?)
+    func loadMoreCells(_ completion: ((Bool) -> Void)?)
 }

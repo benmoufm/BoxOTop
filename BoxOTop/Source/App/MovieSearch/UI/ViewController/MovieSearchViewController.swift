@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISearchBarDelegate {
+class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISearchBarDelegate, MovieSearchTableViewDataSourceDelegate {
 
     var presenter: MovieSearchPresenter?
 
@@ -69,13 +69,24 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         navigationItem.searchController?.dismiss(animated: true, completion: nil)
         guard let searchBarText = searchBar.text else { return }
-            presenter?.updateViewModel(with: searchBarText, { (success) in
+            presenter?.searchMovies(with: searchBarText, { (success) in
                 if success {
                     self.tableView.isHidden = false
                     self.welcomeLabel.isHidden = true
                     self.tableView.reloadData()
+                    self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                 }
             })
+    }
+
+    // MARK: - MovieSearchTableViewDataSourceDelegate
+
+    func loadMoreCells() {
+        presenter?.loadMoreCells({ (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        })
     }
 
     // MARK: - Action methods
@@ -122,6 +133,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         dataSource.configure(tableView)
         tableView.delegate = dataSource
         tableView.dataSource = dataSource
+        dataSource.delegate = self
     }
 
     private func setupActivityIndicatorView() {
