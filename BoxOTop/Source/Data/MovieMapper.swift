@@ -12,6 +12,11 @@ struct MovieMapper {
     let restMovie: RestMovie
 
     func map() -> Movie {
-        return Movie(id: restMovie.id, title: restMovie.title)
+        return Movie(
+            id: restMovie.id,
+            posterURL: restMovie.posterURL,
+            title: restMovie.title,
+            year: restMovie.year
+        )
     }
 }

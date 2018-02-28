@@ -13,7 +13,12 @@ struct MovieSearchTableViewModelMapper {
 
     func map() -> MovieSearchTableViewModel {
         let moviesCellViewModel = cells.map {
-            return MovieSearchCellViewModelMapper(id: $0.id, title: $0.title).map()
+            return MovieSearchCellViewModelMapper(
+                id: $0.id,
+                posterURL: $0.posterURL,
+                title: $0.title,
+                year: $0.year
+                ).map()
         }
         return MovieSearchTableViewModel(cells: moviesCellViewModel)
     }

@@ -10,10 +10,14 @@ import Foundation
 
 struct Movie {
     let id: String
+    let posterURL: String
     let title: String
+    let year: String
 
-    init(id: String, title: String) {
+    init(id: String, posterURL: String, title: String, year: String) {
         self.id = id
+        self.posterURL = posterURL
         self.title = title
+        self.year = year
     }
 }

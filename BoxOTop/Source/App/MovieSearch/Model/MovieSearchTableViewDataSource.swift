@@ -32,6 +32,15 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MovieSearchTableViewCell = tableView.dequeueCell(at: indexPath)
         cell.configure(with: viewModel.cells[indexPath.row])
+        if indexPath.row % 2 == 1 {
+            cell.backgroundColor = UIColor.movieCardColor
+        } else {
+            cell.backgroundColor = UIColor.backgroundColor
+        }
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
 }

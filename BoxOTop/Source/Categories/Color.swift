@@ -16,8 +16,11 @@ extension UIColor {
     static let backgroundColor = UIColor.white
     static let navigationBarColor = UIColor(red: 95/255, green: 158/255, blue: 70/255, alpha: 1)
     static let darkBackgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
+    static let movieCardColor = UIColor(red: 173/255, green: 209/255, blue: 158/255, alpha: 0.5)
 
     // MARK: - Text colors
 
     static let navigationBarTextColor = UIColor.white
+    static let titleColor = UIColor.black
+    static let subtitleColor = UIColor.darkText
 }
