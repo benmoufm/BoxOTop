@@ -15,7 +15,8 @@ struct SearchQueryResultMapper {
         return SearchQueryResult(
             movies: restSearchQueryResult.movies.map { MovieMapper(restMovie: $0).map() },
             total: restSearchQueryResult.totalResults,
-            query: restSearchQueryResult.query
+            query: restSearchQueryResult.query,
+            currentPage: restSearchQueryResult.currentPage
         )
     }
 }

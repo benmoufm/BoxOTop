@@ -10,11 +10,14 @@ import Foundation
 
 enum CustomErrors: LocalizedError {
     case unexpectedJSONFormat
+    case searchQueryNull
 
     public var errorDescription: String? {
         switch self {
         case .unexpectedJSONFormat:
             return "Error. Unexpected JSON Format"
+        case .searchQueryNull:
+            return "Error. The search query is null"
         }
     }
 }

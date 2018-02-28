@@ -12,4 +12,5 @@ struct SearchQueryResult {
     let movies: [Movie]
     let total: Int
     let query: String
+    let currentPage: Int
 }
