@@ -36,7 +36,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 let viewModel = MovieSearchControllerViewModelMapper(cells: data).map()
                 self.viewContract.configure(with: viewModel)
             case .error(let error):
-                debugPrint(error.localizedDescription)
+                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
             }
         }
     }

@@ -10,4 +10,5 @@ import Foundation
 
 protocol MovieSearchViewContract: class {
     func configure(with viewModel: MovieSearchControllerViewModel)
+    func displayAlertPopUp(title: String, message: String)
 }
