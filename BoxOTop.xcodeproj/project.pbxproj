@@ -37,6 +37,7 @@
 		3C5417FF2045A3B800C6C725 /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5417FE2045A3B800C6C725 /* CustomErrors.swift */; };
 		3C5418012045A4FB00C6C725 /* RestMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5418002045A4FB00C6C725 /* RestMovie.swift */; };
 		3C5418032045A50800C6C725 /* MovieMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5418022045A50800C6C725 /* MovieMapper.swift */; };
+		3CAAF76C20469C4200FDF729 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAAF76B20469C4200FDF729 /* Color.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		3C5417FE2045A3B800C6C725 /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		3C5418002045A4FB00C6C725 /* RestMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMovie.swift; sourceTree = "<group>"; };
 		3C5418022045A50800C6C725 /* MovieMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMapper.swift; sourceTree = "<group>"; };
+		3CAAF76B20469C4200FDF729 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 				3C5417EC204576B600C6C725 /* UITableView+Registerable.swift */,
 				3C5417F82045918F00C6C725 /* Result.swift */,
 				3C5417FE2045A3B800C6C725 /* CustomErrors.swift */,
+				3CAAF76B20469C4200FDF729 /* Color.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				3C5417E52045736B00C6C725 /* MovieSearchTableViewCell.swift in Sources */,
 				3C5417FF2045A3B800C6C725 /* CustomErrors.swift in Sources */,
 				3C5417D820456A7E00C6C725 /* Startable.swift in Sources */,
+				3CAAF76C20469C4200FDF729 /* Color.swift in Sources */,
 				3C5417CD204567C600C6C725 /* MovieSearchControllerViewModelMapper.swift in Sources */,
 				3C5417D520456A1700C6C725 /* MovieSearchPresenterImplementation.swift in Sources */,
 				3C5417F320458F3D00C6C725 /* MoviesRepository.swift in Sources */,

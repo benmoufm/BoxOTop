@@ -52,8 +52,8 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
     @objc func toggleSearchBarDown() {
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.placeholder = "Search for a movie..."
-        (navigationItem.searchController?.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.white
         navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
+        (navigationItem.searchController?.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.navigationBarTextColor
         self.navigationItem.rightBarButtonItem = UIBarButtonItem()
         UIView.animate(withDuration: 0.3) {
             self.navigationItem.searchController?.searchBar.becomeFirstResponder()
@@ -70,8 +70,10 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
 
     private func setupNavigationBar() {
         navigationItem.title = "📺 Box Office"
-        navigationController?.navigationBar.barTintColor = UIColor.green
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.navigationBarTextColor
+        ]
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
 
@@ -91,7 +93,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract {
     }
 
     private func setup() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.backgroundColor
         setupSearchButton()
         setupNavigationBar()
         setupTableView()
