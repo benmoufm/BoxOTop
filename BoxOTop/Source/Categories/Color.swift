@@ -15,6 +15,7 @@ extension UIColor {
 
     static let backgroundColor = UIColor.white
     static let navigationBarColor = UIColor(red: 95/255, green: 158/255, blue: 70/255, alpha: 1)
+    static let darkBackgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
 
     // MARK: - Text colors
 
