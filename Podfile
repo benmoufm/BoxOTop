@@ -8,5 +8,6 @@ target 'BoxOTop' do
   # Pods for BoxOTop
   pod 'Alamofire', '~> 4.6'
   pod 'SwiftyJSON'
+  pod 'SDWebImage', '~> 4.0'
 
 end
