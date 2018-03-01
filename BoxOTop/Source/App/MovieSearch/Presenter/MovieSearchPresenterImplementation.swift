@@ -28,7 +28,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
 
     // MARK: - MovieSearchPresenter
 
-    func searchMovies(with query: String, _ completion: ((Bool) -> Void)?) {
+    func searchMovies(with query: String) {
         if query.count < 2 {
             viewContract.displayAlertPopUp(title: "Error", message: "Query too short")
         } else {
@@ -39,26 +39,24 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 case .value(let data):
                     self.searchQuery = data
                     self.computeAndDisplayViewModel()
-                    completion?(true)
+                    self.viewContract.scrollWhenNewQuery()
                 case .error(let error):
                     self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
-                    completion?(false)
                 }
             }
         }
     }
 
-    func loadMoreCells(_ completion: ((Bool) -> Void)?) {
+    func loadMoreCells() {
         guard let searchQuery = searchQuery else { return }
         moviesRepository.getMovies(at: searchQuery.currentPage+1) { (result) in
             switch result {
             case .value(let data):
                 self.searchQuery = data
                 self.computeAndDisplayViewModel()
-                completion?(true)
+                self.viewContract.reloadTableView()
             case .error(let error):
                 self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
-                completion?(false)
             }
         }
     }

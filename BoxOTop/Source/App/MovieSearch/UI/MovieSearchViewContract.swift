@@ -11,4 +11,6 @@ import Foundation
 protocol MovieSearchViewContract: class, Loadable {
     func configure(with viewModel: MovieSearchControllerViewModel)
     func displayAlertPopUp(title: String, message: String)
+    func scrollWhenNewQuery()
+    func reloadTableView()
 }

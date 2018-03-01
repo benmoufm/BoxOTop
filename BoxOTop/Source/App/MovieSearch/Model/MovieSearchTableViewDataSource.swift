@@ -66,8 +66,6 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
         let cellViewModel = viewModel.cells[indexPath.row]
         switch cellViewModel {
         case .loadCell:
-            guard let cell = tableView.cellForRow(at: indexPath) as? LoadTableViewCell else { return }
-            cell.displayLoading()
             delegate?.loadMoreCells()
         case .movieCell:
             // TODO (Mélodie Benmouffek) 01/03/2018 When movie cell selected do

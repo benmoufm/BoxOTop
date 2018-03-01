@@ -50,6 +50,17 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         present(alert, animated: true, completion: nil)
     }
 
+    func scrollWhenNewQuery() {
+        tableView.isHidden = false
+        welcomeLabel.isHidden = true
+        tableView.reloadData()
+        tableView.scrollRectToVisible(.zero, animated: true)
+    }
+
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+
     // MARK: - Loadable
 
     func displayLoading() {
@@ -69,24 +80,13 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         navigationItem.searchController?.dismiss(animated: true, completion: nil)
         guard let searchBarText = searchBar.text else { return }
-            presenter?.searchMovies(with: searchBarText, { (success) in
-                if success {
-                    self.tableView.isHidden = false
-                    self.welcomeLabel.isHidden = true
-                    self.tableView.reloadData()
-                    self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-                }
-            })
+            presenter?.searchMovies(with: searchBarText)
     }
 
     // MARK: - MovieSearchTableViewDataSourceDelegate
 
     func loadMoreCells() {
-        presenter?.loadMoreCells({ (success) in
-            if success {
-                self.tableView.reloadData()
-            }
-        })
+        presenter?.loadMoreCells()
     }
 
     // MARK: - Action methods

@@ -28,6 +28,18 @@ class LoadTableViewCell: UITableViewCell, Loadable {
         setup()
     }
 
+    // MARK: - UITableViewCell
+
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                displayLoading()
+            } else {
+                hideLoading()
+            }
+        }
+    }
+
     // MARK: - Loadable
 
     func displayLoading() {
