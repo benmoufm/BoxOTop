@@ -77,13 +77,10 @@ class MovieTableViewCell: UITableViewCell {
     }
 
     private func setupLayout() {
-        addSubview(posterImageView)
-        addSubview(stackView)
+        contentView.addSubview(posterImageView)
+        contentView.addSubview(stackView)
 
-        posterImageView.translatesAutoresizingMaskIntoConstraints = false
-        posterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        posterImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5).isActive = true
-        posterImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
+        posterImageView.pinToSuperView(edges: [.top, .bottom, .left], insets: UIEdgeInsets(top: 5, left: 5, bottom: -5, right: 0))
         posterImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
 
         stackView.translatesAutoresizingMaskIntoConstraints = false

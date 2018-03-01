@@ -46,6 +46,7 @@
 		3CEAE2BC2047F90900C132B6 /* SearchQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2BB2047F90900C132B6 /* SearchQueryResult.swift */; };
 		3CEAE2BE2047FAA000C132B6 /* RestSearchQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */; };
 		3CEAE2C02047FABD00C132B6 /* SearchQueryResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */; };
+		3CEAE2C220484FE400C132B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2C120484FE400C132B6 /* UIViewExtension.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		3CEAE2BB2047F90900C132B6 /* SearchQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueryResult.swift; sourceTree = "<group>"; };
 		3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSearchQueryResult.swift; sourceTree = "<group>"; };
 		3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueryResultMapper.swift; sourceTree = "<group>"; };
+		3CEAE2C120484FE400C132B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -216,6 +218,7 @@
 				3C5417F82045918F00C6C725 /* Result.swift */,
 				3C5417FE2045A3B800C6C725 /* CustomErrors.swift */,
 				3CAAF76B20469C4200FDF729 /* Color.swift */,
+				3CEAE2C120484FE400C132B6 /* UIViewExtension.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				3C5417F320458F3D00C6C725 /* MoviesRepository.swift in Sources */,
 				3C5417C72045641000C6C725 /* Coordinator.swift in Sources */,
 				3C5417D1204569BD00C6C725 /* MovieSearchViewContract.swift in Sources */,
+				3CEAE2C220484FE400C132B6 /* UIViewExtension.swift in Sources */,
 				3C5418032045A50800C6C725 /* MovieMapper.swift in Sources */,
 				3C5417DA20456F6D00C6C725 /* MovieSearchTableViewDataSource.swift in Sources */,
 				3C5417F520458F6000C6C725 /* MoviesRepositoryImplementation.swift in Sources */,

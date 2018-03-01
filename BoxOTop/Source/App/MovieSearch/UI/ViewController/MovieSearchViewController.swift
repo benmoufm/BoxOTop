@@ -149,25 +149,10 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         view.addSubview(activityIndicatorBackgroundView)
         view.addSubview(activityIndicator)
 
-        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-        welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        welcomeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-
-        activityIndicatorBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicatorBackgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        activityIndicatorBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        activityIndicatorBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        activityIndicatorBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: activityIndicatorBackgroundView.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: activityIndicatorBackgroundView.centerYAnchor).isActive = true
+        welcomeLabel.centerInSuperView()
+        tableView.pinToSuperView(edges: .all, insets: .zero)
+        activityIndicatorBackgroundView.pinToSuperView(edges: .all, insets: .zero)
+        activityIndicator.centerInSuperView()
     }
 
     private func setup() {

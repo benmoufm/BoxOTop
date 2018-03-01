@@ -69,16 +69,11 @@ class LoadTableViewCell: UITableViewCell, Loadable {
     }
 
     private func setupLayout() {
-        addSubview(loadLabel)
-        addSubview(activityIndicator)
+        contentView.addSubview(loadLabel)
+        contentView.addSubview(activityIndicator)
 
-        loadLabel.translatesAutoresizingMaskIntoConstraints = false
-        loadLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        loadLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        loadLabel.centerInSuperView()
+        activityIndicator.centerInSuperView()
     }
 
     private func setup() {
