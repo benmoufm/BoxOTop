@@ -11,6 +11,7 @@ import UIKit
 
 protocol MovieSearchTableViewDataSourceDelegate: class {
     func loadMoreCells()
+    func movieSearchTableViewDataSource(_ dataSource: MovieSearchTableViewDataSource)
 }
 
 class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
@@ -68,8 +69,7 @@ class MovieSearchTableViewDataSource: NSObject, UITableViewDelegate, UITableView
         case .loadCell:
             delegate?.loadMoreCells()
         case .movieCell:
-            // TODO (Mélodie Benmouffek) 01/03/2018 When movie cell selected do
-            break
+            delegate?.movieSearchTableViewDataSource(self)
         }
     }
 

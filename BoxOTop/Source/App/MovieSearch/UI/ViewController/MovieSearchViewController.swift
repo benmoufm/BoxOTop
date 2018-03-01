@@ -89,6 +89,10 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         presenter?.loadMoreCells()
     }
 
+    func movieSearchTableViewDataSource(_ dataSource: MovieSearchTableViewDataSource) {
+        presenter?.didSelectMovieCell()
+    }
+
     // MARK: - Action methods
 
     @objc func toggleSearchBarDown() {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, MovieSearchPresenterDelegate {
 
     let window: UIWindow
     let navigationController: UINavigationController
@@ -20,8 +20,15 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let movieSearchViewController = ViewControllerFactory.instance.movieSearchViewController()
+        let movieSearchViewController = ViewControllerFactory.instance.movieSearchViewController(presenterDelegate: self)
         navigationController.pushViewController(movieSearchViewController, animated: false)
         window.rootViewController = navigationController
+    }
+
+    // MARK: - MovieSearchPresenterDelegate
+
+    func movieSearchPresenter(_ presenter: MovieSearchPresenter) {
+        let movieDetailsViewController = ViewControllerFactory.instance.movieDetailsViewController()
+        navigationController.pushViewController(movieDetailsViewController, animated: true)
     }
 }

@@ -12,6 +12,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
     private unowned let viewContract: MovieSearchViewContract
     private let moviesRepository: MoviesRepository
     private var searchQuery: SearchQueryResult?
+    var delegate: MovieSearchPresenterDelegate? = nil
 
     // MARK: LifeCycle
 
@@ -59,6 +60,10 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
             }
         }
+    }
+
+    func didSelectMovieCell() {
+        delegate?.movieSearchPresenter(self)
     }
 
     // MARK: - private methods
