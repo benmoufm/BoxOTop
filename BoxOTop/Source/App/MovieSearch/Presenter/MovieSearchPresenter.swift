@@ -9,12 +9,12 @@
 import Foundation
 
 protocol MovieSearchPresenterDelegate: class {
-    func movieSearchPresenter(_ presenter: MovieSearchPresenter)
+    func movieSearchPresenter(_ presenter: MovieSearchPresenter, id: String)
 }
 
 protocol MovieSearchPresenter: Startable {
     var delegate: MovieSearchPresenterDelegate? { get }
     func searchMovies(with query: String)
     func loadMoreCells()
-    func didSelectMovieCell()
+    func didSelectMovieCell(with id: String)
 }

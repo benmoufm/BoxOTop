@@ -13,11 +13,15 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     // MARK: - Private properties
 
     private unowned let viewContract: MovieDetailsViewContract
+    private let moviesRepository: MoviesRepository
+    private let movieId: String
 
     // MARK: - Lifecycle
 
-    init(viewContract: MovieDetailsViewContract) {
+    init(viewContract: MovieDetailsViewContract, moviesRepository: MoviesRepository, id: String) {
         self.viewContract = viewContract
+        self.moviesRepository = moviesRepository
+        self.movieId = id
     }
 
     // MARK: - Startable

@@ -27,8 +27,8 @@ class MainCoordinator: Coordinator, MovieSearchPresenterDelegate {
 
     // MARK: - MovieSearchPresenterDelegate
 
-    func movieSearchPresenter(_ presenter: MovieSearchPresenter) {
-        let movieDetailsViewController = ViewControllerFactory.instance.movieDetailsViewController()
+    func movieSearchPresenter(_ presenter: MovieSearchPresenter, id: String) {
+        let movieDetailsViewController = ViewControllerFactory.instance.movieDetailsViewController(id: id)
         navigationController.pushViewController(movieDetailsViewController, animated: true)
     }
 }

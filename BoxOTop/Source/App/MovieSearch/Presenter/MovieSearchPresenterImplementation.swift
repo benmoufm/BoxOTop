@@ -62,8 +62,8 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
         }
     }
 
-    func didSelectMovieCell() {
-        delegate?.movieSearchPresenter(self)
+    func didSelectMovieCell(with id: String) {
+        delegate?.movieSearchPresenter(self, id: id)
     }
 
     // MARK: - private methods

@@ -89,8 +89,8 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         presenter?.loadMoreCells()
     }
 
-    func movieSearchTableViewDataSource(_ dataSource: MovieSearchTableViewDataSource) {
-        presenter?.didSelectMovieCell()
+    func movieSearchTableViewDataSource(_ dataSource: MovieSearchTableViewDataSource, id: String) {
+        presenter?.didSelectMovieCell(with: id)
     }
 
     // MARK: - Action methods
