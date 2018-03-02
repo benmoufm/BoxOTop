@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
 
@@ -39,7 +40,28 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
     // MARK: - MovieDetailsViewContract
 
     func configure(with viewModel: MovieDetailsControllerViewModel) {
-        // TODO (Mélodie Benmouffek) 01/03/2018 Configure with view model
+        titleLabel.text = viewModel.title
+        if let url = URL(string: viewModel.posterURL) {
+            posterImageView.sd_setImage(
+                with: url,
+                placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),
+                options: .highPriority,
+                completed: { (image, error, imageCacheType, url) in
+                    if image == nil {
+                        self.posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
+                        self.posterImageView.tintColor = UIColor.mainColor
+                    }
+            })
+        } else {
+            posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
+            posterImageView.tintColor = UIColor.mainColor
+        }
+        releaseDateLabel.text = "Release date : " + viewModel.releaseDate
+        directorLabel.text = "Directed by : " + viewModel.director
+        genreLabel.text = "Genre : " + viewModel.genre
+        runtimeLabel.text = "Runtime : " + viewModel.runtime
+        synopsisTextLabel.text = viewModel.synopsis
+        castingTextLabel.text = viewModel.casting
     }
 
     // MARK: - Private methods

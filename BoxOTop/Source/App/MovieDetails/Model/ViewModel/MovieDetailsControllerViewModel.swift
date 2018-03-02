@@ -9,5 +9,12 @@
 import Foundation
 
 struct MovieDetailsControllerViewModel {
-
+    let title: String
+    let posterURL: String
+    let releaseDate: String
+    let director: String
+    let genre: String
+    let runtime: String
+    let synopsis: String
+    let casting: String
 }

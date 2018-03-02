@@ -9,7 +9,25 @@
 import Foundation
 
 struct MovieDetailsControllerViewModelMapper {
+    let title: String
+    let posterURL: String
+    let releaseDate: String
+    let genre: String
+    let runtime: String
+    let synopsis: String
+    let director: String
+    let casting: String
+
     func map() -> MovieDetailsControllerViewModel {
-        return MovieDetailsControllerViewModel()
+        return MovieDetailsControllerViewModel(
+            title: title,
+            posterURL: posterURL,
+            releaseDate: releaseDate,
+            director: director,
+            genre: genre,
+            runtime: runtime,
+            synopsis: synopsis,
+            casting: casting
+        )
     }
 }
