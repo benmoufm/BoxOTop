@@ -33,7 +33,24 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     // MARK: - Private methods
 
     private func computeAndDisplay() {
-        // TODO (Mélodie Benmouffek) 01/03/2018 configure view contract with view model
+        moviesRepository.getMovie(by: movieId) { (result) in
+            switch result {
+            case .value(let movie):
+                let viewModel = MovieDetailsControllerViewModelMapper(
+                    title: movie.title,
+                    posterURL: movie.posterURL,
+                    releaseDate: movie.releaseDate,
+                    genre: movie.genre,
+                    runtime: movie.runtime,
+                    synopsis: movie.synopsis,
+                    director: movie.director,
+                    casting: movie.casting
+                ).map()
+                self.viewContract.configure(with: viewModel)
+            case .error(let error):
+                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+            }
+        }
     }
 
 }
