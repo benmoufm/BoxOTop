@@ -26,4 +26,5 @@ extension UIColor {
     static let navigationBarTextColor = UIColor.white
     static let titleColor = UIColor.black
     static let subtitleColor = UIColor.darkText
+    static let lightGreyTextColor = UIColor.lightGray
 }

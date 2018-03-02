@@ -10,4 +10,5 @@ import Foundation
 
 struct MovieDetailsCellViewModel {
     let ratingSource: String
+    let stars: StarRaterViewModel
 }
