@@ -64,6 +64,19 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         castingTextLabel.text = viewModel.casting
     }
 
+    func displayAlertPopUp(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        alert.addAction(UIAlertAction(
+            title: "Ok",
+            style: UIAlertActionStyle.default, handler: nil)
+        )
+        present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - Private methods
 
     private func setupNavigationBar() {
