@@ -15,6 +15,7 @@ struct MovieDetailsControllerViewModel {
     let director: String
     let genre: String
     let runtime: String
+    let ratings: MovieDetailsCollectionViewModel
     let synopsis: String
     let casting: String
 }

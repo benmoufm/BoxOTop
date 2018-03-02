@@ -14,6 +14,7 @@ struct MovieDetailsControllerViewModelMapper {
     let releaseDate: String
     let genre: String
     let runtime: String
+    let ratings: [Rating]
     let synopsis: String
     let director: String
     let casting: String
@@ -26,6 +27,7 @@ struct MovieDetailsControllerViewModelMapper {
             director: director,
             genre: genre,
             runtime: runtime,
+            ratings: MovieDetailsCollectionViewModelMapper(cells: ratings).map(),
             synopsis: synopsis,
             casting: casting
         )

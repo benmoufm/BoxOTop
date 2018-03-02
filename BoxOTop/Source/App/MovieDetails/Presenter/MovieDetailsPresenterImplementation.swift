@@ -42,6 +42,7 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
                     releaseDate: movie.releaseDate,
                     genre: movie.genre,
                     runtime: movie.runtime,
+                    ratings: movie.ratings,
                     synopsis: movie.synopsis,
                     director: movie.director,
                     casting: movie.casting
