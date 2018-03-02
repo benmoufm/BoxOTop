@@ -28,6 +28,9 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
     private let synopsisTextLabel = UILabel()
     private let castingTitleLabel = UILabel()
     private let castingTextLabel = UILabel()
+    private let layout = UICollectionViewFlowLayout()
+    private lazy var ratingsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+    private let dataSource = MovieDetailsCollectionViewDataSource()
 
     // MARK: - UIViewController
 
@@ -62,6 +65,8 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         runtimeLabel.text = "Runtime : " + viewModel.runtime
         synopsisTextLabel.text = viewModel.synopsis
         castingTextLabel.text = viewModel.casting
+        dataSource.update(with: viewModel.ratings)
+        ratingsCollectionView.reloadData()
     }
 
     func displayAlertPopUp(title: String, message: String) {
@@ -142,6 +147,15 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         castingTextLabel.numberOfLines = 0
     }
 
+    private func setupRatingsCollectionView() {
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 180, height: 50)
+        ratingsCollectionView.backgroundColor = UIColor.backgroundColor
+        dataSource.configure(ratingsCollectionView)
+        ratingsCollectionView.delegate = dataSource
+        ratingsCollectionView.dataSource = dataSource
+    }
+
     private func setupLayout() {
         view.addSubview(posterImageView)
         view.addSubview(verticalStackView)
@@ -150,6 +164,7 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         verticalStackView.addArrangedSubview(directorLabel)
         verticalStackView.addArrangedSubview(genreLabel)
         verticalStackView.addArrangedSubview(runtimeLabel)
+        view.addSubview(ratingsCollectionView)
         view.addSubview(stackView)
         stackView.addArrangedSubview(synopsisTitleLabel)
         stackView.addArrangedSubview(synopsisTextLabel)
@@ -165,8 +180,12 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         verticalStackView.leftAnchor.constraint(equalTo: posterImageView.rightAnchor, constant: 5).isActive = true
         verticalStackView.bottomAnchor.constraint(equalTo: posterImageView.bottomAnchor).isActive = true
 
+        ratingsCollectionView.pinToSuperView(edges: [.right, .left], insets: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5))
+        ratingsCollectionView.topAnchor.constraint(equalTo: verticalStackView.bottomAnchor, constant: 5).isActive = true
+        ratingsCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+
         stackView.pinToSuperView(edges: [.right, .left], insets: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5))
-        stackView.topAnchor.constraint(equalTo: verticalStackView.bottomAnchor, constant: 5).isActive = true
+        stackView.topAnchor.constraint(equalTo: ratingsCollectionView.bottomAnchor, constant: 5).isActive = true
     }
 
     private func setup() {
@@ -180,6 +199,7 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
         setupGenreLabel()
         setupRuntimeLabel()
         setupStackView()
+        setupRatingsCollectionView()
         setupSynopsis()
         setupCasting()
         setupLayout()
