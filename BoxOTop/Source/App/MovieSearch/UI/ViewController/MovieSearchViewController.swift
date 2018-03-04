@@ -81,11 +81,8 @@ class MovieSearchViewController: SharedViewController, MovieSearchViewContract, 
 
     @objc func toggleSearchBarDown() {
         navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.placeholder = "movie_search_search_bar_placeholder_text".localized
-        navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem()
         (navigationItem.searchController?.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.navigationBarTextColor
-        navigationItem.searchController?.searchBar.delegate = self
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem()
         UIView.animate(withDuration: 0.3) {
             self.navigationItem.searchController?.searchBar.becomeFirstResponder()
             self.view.layoutIfNeeded()
@@ -93,6 +90,13 @@ class MovieSearchViewController: SharedViewController, MovieSearchViewContract, 
     }
 
     // MARK: - Private methods
+
+    private func setupSearchController() {
+        searchController.searchBar.tintColor = UIColor.navigationBarTextColor
+        searchController.searchBar.placeholder = "movie_search_search_bar_placeholder_text".localized
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
 
     private func setupSearchButton() {
         searchButton.setImage(#imageLiteral(resourceName: "searchIcon"), for: .normal)
@@ -130,6 +134,7 @@ class MovieSearchViewController: SharedViewController, MovieSearchViewContract, 
 
     private func setup() {
         view.backgroundColor = UIColor.backgroundColor
+        setupSearchController()
         setupSearchButton()
         setupNavigationBar()
         setupWelcomeLabel()
