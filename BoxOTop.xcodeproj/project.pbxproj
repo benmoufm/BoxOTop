@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C1CEA812049E414007E1E25 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA802049E414007E1E25 /* NumberFormatterExtension.swift */; };
 		3C1CEA612049C946007E1E25 /* UICollectionView+Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA602049C946007E1E25 /* UICollectionView+Registerable.swift */; };
 		3C1CEA642049CB75007E1E25 /* MovieDetailsCellViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA622049CB75007E1E25 /* MovieDetailsCellViewModelMapper.swift */; };
 		3C1CEA652049CB75007E1E25 /* MovieDetailsCollectionViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA632049CB75007E1E25 /* MovieDetailsCollectionViewModelMapper.swift */; };
@@ -21,6 +20,7 @@
 		3C1CEA792049D60B007E1E25 /* StarRaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA782049D60B007E1E25 /* StarRaterView.swift */; };
 		3C1CEA7B2049D629007E1E25 /* StarRaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA7A2049D629007E1E25 /* StarRaterViewModel.swift */; };
 		3C1CEA7D2049D635007E1E25 /* StarRaterViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA7C2049D635007E1E25 /* StarRaterViewModelMapper.swift */; };
+		3C1CEA812049E414007E1E25 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1CEA802049E414007E1E25 /* NumberFormatterExtension.swift */; };
 		3C54177320449D6900C6C725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54177220449D6900C6C725 /* AppDelegate.swift */; };
 		3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54177420449D6900C6C725 /* MovieSearchViewController.swift */; };
 		3C54177D20449D6900C6C725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C54177C20449D6900C6C725 /* Assets.xcassets */; };
@@ -78,7 +78,6 @@
 
 /* Begin PBXFileReference section */
 		2C231743AC1A7CA12A84C7A1 /* Pods-BoxOTop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.release.xcconfig"; sourceTree = "<group>"; };
-		3C1CEA802049E414007E1E25 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		3C1CEA602049C946007E1E25 /* UICollectionView+Registerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Registerable.swift"; sourceTree = "<group>"; };
 		3C1CEA622049CB75007E1E25 /* MovieDetailsCellViewModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsCellViewModelMapper.swift; sourceTree = "<group>"; };
 		3C1CEA632049CB75007E1E25 /* MovieDetailsCollectionViewModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsCollectionViewModelMapper.swift; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		3C1CEA782049D60B007E1E25 /* StarRaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRaterView.swift; sourceTree = "<group>"; };
 		3C1CEA7A2049D629007E1E25 /* StarRaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRaterViewModel.swift; sourceTree = "<group>"; };
 		3C1CEA7C2049D635007E1E25 /* StarRaterViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRaterViewModelMapper.swift; sourceTree = "<group>"; };
+		3C1CEA802049E414007E1E25 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		3C54176F20449D6900C6C725 /* BoxOTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxOTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C54177220449D6900C6C725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C54177420449D6900C6C725 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +172,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3C4D312D204ADC7600A294D8 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				3C5418022045A50800C6C725 /* MovieMapper.swift */,
+				3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */,
+				3C74E98620498E250095689B /* MovieDetailMapper.swift */,
+				3C74E98C204992EB0095689B /* RatingMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		3C54176620449D6900C6C725 = {
 			isa = PBXGroup;
 			children = (
@@ -236,14 +247,11 @@
 			isa = PBXGroup;
 			children = (
 				3C5417F420458F6000C6C725 /* MoviesRepositoryImplementation.swift */,
+				3C4D312D204ADC7600A294D8 /* Mapper */,
 				3C5418002045A4FB00C6C725 /* RestMovie.swift */,
-				3C5418022045A50800C6C725 /* MovieMapper.swift */,
 				3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */,
-				3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */,
 				3C74E98420498E100095689B /* RestMovieDetail.swift */,
-				3C74E98620498E250095689B /* MovieDetailMapper.swift */,
 				3C74E98A204992C20095689B /* RestRating.swift */,
-				3C74E98C204992EB0095689B /* RatingMapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -821,6 +829,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XU5C3X4869;
 				INFOPLIST_FILE = BoxOTop/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyCompany.BoxOTop;
@@ -836,6 +845,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XU5C3X4869;
 				INFOPLIST_FILE = BoxOTop/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyCompany.BoxOTop;
