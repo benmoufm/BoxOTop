@@ -59,10 +59,10 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
             posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
             posterImageView.tintColor = UIColor.mainColor
         }
-        releaseDateLabel.text = "Release date : " + viewModel.releaseDate
-        directorLabel.text = "Directed by : " + viewModel.director
-        genreLabel.text = "Genre : " + viewModel.genre
-        runtimeLabel.text = "Runtime : " + viewModel.runtime
+        releaseDateLabel.text = "movie_details_release_date_label_text".localized + viewModel.releaseDate
+        directorLabel.text = "movie_details_directed_by_label_text".localized + viewModel.director
+        genreLabel.text = "movie_details_genre_label_text".localized + viewModel.genre
+        runtimeLabel.text = "movie_details_runtime_label_text".localized + viewModel.runtime
         synopsisTextLabel.text = viewModel.synopsis
         castingTextLabel.text = viewModel.casting
         dataSource.update(with: viewModel.ratings)
@@ -85,7 +85,7 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
     // MARK: - Private methods
 
     private func setupNavigationBar() {
-        navigationItem.title = "📺 Details"
+        navigationItem.title = "movie_details_navigation_bar_title".localized
         navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.navigationBarTextColor
@@ -113,36 +113,36 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
     }
 
     private func setupTitleLabel() {
-        titleLabel.text = "Title"
+        titleLabel.text = "movie_details_title_label_text".localized
         titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
     }
 
     private func setupDirectorLabel() {
-        directorLabel.text = "Directed by : "
+        directorLabel.text = "movie_details_directed_by_label_text".localized
     }
 
     private func setupReleaseDate() {
-        releaseDateLabel.text = "Release date : "
+        releaseDateLabel.text = "movie_details_release_date_label_text".localized
     }
 
     private func setupGenreLabel() {
-        genreLabel.text = "Genre : "
+        genreLabel.text = "movie_details_genre_label_text".localized
     }
 
     private func setupRuntimeLabel() {
-        runtimeLabel.text = "Runtime : "
+        runtimeLabel.text = "movie_details_runtime_label_text".localized
     }
 
     private func setupSynopsis() {
-        synopsisTitleLabel.text = "Synopsis :"
+        synopsisTitleLabel.text = "movie_details_synopsis_label_text".localized
         synopsisTitleLabel.font = UIFont.systemFont(ofSize: 18)
         synopsisTextLabel.numberOfLines = 0
     }
 
     private func setupCasting() {
-        castingTitleLabel.text = "Casting :"
+        castingTitleLabel.text = "movie_details_casting_label_text".localized
         castingTitleLabel.font = UIFont.systemFont(ofSize: 18)
         castingTextLabel.numberOfLines = 0
     }

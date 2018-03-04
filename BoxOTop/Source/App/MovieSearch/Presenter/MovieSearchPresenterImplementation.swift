@@ -31,7 +31,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
 
     func searchMovies(with query: String) {
         if query.count < 2 {
-            viewContract.displayAlertPopUp(title: "Error", message: "Query too short")
+            viewContract.displayAlertPopUp(title: "Error", message: "error_query_too_short_text".localized)
         } else {
             viewContract.displayLoading()
             moviesRepository.getMovies(with: query) { (result) in

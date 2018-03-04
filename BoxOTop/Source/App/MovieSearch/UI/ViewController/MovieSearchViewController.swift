@@ -97,7 +97,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
 
     @objc func toggleSearchBarDown() {
         navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.placeholder = "Search for a movie..."
+        navigationItem.searchController?.searchBar.placeholder = "movie_search_search_bar_placeholder_text".localized
         navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
         (navigationItem.searchController?.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.navigationBarTextColor
         navigationItem.searchController?.searchBar.delegate = self
@@ -116,7 +116,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     }
 
     private func setupNavigationBar() {
-        navigationItem.title = "📺 Box Office"
+        navigationItem.title = "movie_search_navigation_bar_title".localized
         navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.navigationBarTextColor
@@ -125,7 +125,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     }
 
     private func setupWelcomeLabel() {
-        welcomeLabel.text = "Welcome to BoxOfice !\n Search for your favorite movies !"
+        welcomeLabel.text = "movie_search_welcome_label_text".localized
         welcomeLabel.textColor = UIColor.mainColor
         welcomeLabel.numberOfLines = 2
         welcomeLabel.font = UIFont.boldSystemFont(ofSize: 20.0)

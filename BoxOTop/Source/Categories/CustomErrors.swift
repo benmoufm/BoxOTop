@@ -15,9 +15,9 @@ enum CustomErrors: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .unexpectedJSONFormat:
-            return "Error. Unexpected JSON Format"
+            return "custom_error_unexpected_json_format_text".localized
         case .searchQueryNull:
-            return "Error. The search query is null"
+            return "custom_error_search_query_nil_text".localized
         }
     }
 }

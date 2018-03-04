@@ -58,7 +58,7 @@ class LoadTableViewCell: UITableViewCell, Loadable {
 
     private func setupLoadLabel() {
         loadLabel.isHidden = false
-        loadLabel.text = "..."
+        loadLabel.text = "movie_search_load_more_cell_text".localized
         loadLabel.textColor = UIColor.darkText
         loadLabel.font = UIFont.boldSystemFont(ofSize: 25.0)
     }
