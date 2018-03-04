@@ -19,8 +19,7 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     private var dataSource = MovieSearchTableViewDataSource()
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchButton = UIButton()
-    private var activityIndicator = UIActivityIndicatorView()
-    private var activityIndicatorBackgroundView = UIView()
+    private var loadingView = LoadingView()
 
     // MARK: - UIViewController
 
@@ -64,15 +63,11 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     // MARK: - Loadable
 
     func displayLoading() {
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
-        activityIndicatorBackgroundView.isHidden = false
+        loadingView.displayLoading()
     }
 
     func hideLoading() {
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.isHidden = true
-        self.activityIndicatorBackgroundView.isHidden = true
+        loadingView.hideLoading()
     }
 
     // MARK: - UISearchBarDelegate
@@ -140,30 +135,20 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
         dataSource.delegate = self
     }
 
-    private func setupActivityIndicatorView() {
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
-        activityIndicator.isHidden = true
-        activityIndicatorBackgroundView.backgroundColor = UIColor.darkBackgroundColor
-        activityIndicatorBackgroundView.isHidden = true
-    }
-
     private func setupLayout() {
         view.addSubview(welcomeLabel)
         view.addSubview(tableView)
-        view.addSubview(activityIndicatorBackgroundView)
-        view.addSubview(activityIndicator)
+        view.addSubview(loadingView)
 
         welcomeLabel.centerInSuperView()
         tableView.pinToSuperView(edges: .all, insets: .zero)
-        activityIndicatorBackgroundView.pinToSuperView(edges: .all, insets: .zero)
-        activityIndicator.centerInSuperView()
+        loadingView.pinToSuperView(edges: .all, insets: .zero)
     }
 
     private func setup() {
         view.backgroundColor = UIColor.backgroundColor
         setupSearchButton()
         setupNavigationBar()
-        setupActivityIndicatorView()
         setupWelcomeLabel()
         setupTableView()
         setupLayout()
