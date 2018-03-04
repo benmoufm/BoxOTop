@@ -16,7 +16,7 @@ class MainCoordinator: Coordinator, MovieSearchPresenterDelegate {
 
     init(window: UIWindow) {
         self.window = window
-        self.navigationController = UINavigationController()
+        self.navigationController = SharedNavigationController()
     }
 
     func start() {

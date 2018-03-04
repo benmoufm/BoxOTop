@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
+class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract {
 
     var presenter: MovieDetailsPresenter?
 
@@ -86,10 +86,6 @@ class MovieDetailsViewController: UIViewController, MovieDetailsViewContract {
 
     private func setupNavigationBar() {
         navigationItem.title = "movie_details_navigation_bar_title".localized
-        navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.navigationBarTextColor
-        ]
     }
 
     private func setupVerticalStackView() {

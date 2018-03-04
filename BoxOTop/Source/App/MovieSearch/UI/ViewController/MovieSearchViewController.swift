@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISearchBarDelegate, MovieSearchTableViewDataSourceDelegate {
+class MovieSearchViewController: SharedViewController, MovieSearchViewContract, UISearchBarDelegate, MovieSearchTableViewDataSourceDelegate {
 
     var presenter: MovieSearchPresenter?
 
@@ -19,7 +19,6 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     private var dataSource = MovieSearchTableViewDataSource()
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchButton = UIButton()
-    private var loadingView = LoadingView()
 
     // MARK: - UIViewController
 
@@ -58,16 +57,6 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
 
     func reloadTableView() {
         tableView.reloadData()
-    }
-
-    // MARK: - Loadable
-
-    func displayLoading() {
-        loadingView.displayLoading()
-    }
-
-    func hideLoading() {
-        loadingView.hideLoading()
     }
 
     // MARK: - UISearchBarDelegate
@@ -112,10 +101,6 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
 
     private func setupNavigationBar() {
         navigationItem.title = "movie_search_navigation_bar_title".localized
-        navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.navigationBarTextColor
-        ]
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
 
@@ -138,11 +123,9 @@ class MovieSearchViewController: UIViewController, MovieSearchViewContract, UISe
     private func setupLayout() {
         view.addSubview(welcomeLabel)
         view.addSubview(tableView)
-        view.addSubview(loadingView)
 
         welcomeLabel.centerInSuperView()
         tableView.pinToSuperView(edges: .all, insets: .zero)
-        loadingView.pinToSuperView(edges: .all, insets: .zero)
     }
 
     private func setup() {
