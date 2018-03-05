@@ -38,7 +38,8 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
         dataRepository.save(with: movieId, rating: 0.5) { (result) in
             switch result {
             case .value:
-                break
+                self.computeAndDisplay()
+                self.viewContract.reloadCollectionView()
             case .error(let error):
                 self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
             }
@@ -49,22 +50,30 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
 
     private func computeAndDisplay() {
         viewContract.displayLoading()
-        moviesRepository.getMovie(by: movieId) { (result) in
-            self.viewContract.hideLoading()
+        dataRepository.fetch(with: movieId) { (result) in
             switch result {
-            case .value(let movie):
-                let viewModel = MovieDetailsControllerViewModelMapper(
-                    title: movie.title,
-                    posterURL: movie.posterURL,
-                    releaseDate: movie.releaseDate,
-                    genre: movie.genre,
-                    runtime: movie.runtime,
-                    ratings: movie.ratings,
-                    synopsis: movie.synopsis,
-                    director: movie.director,
-                    casting: movie.casting
-                ).map()
-                self.viewContract.configure(with: viewModel)
+            case . value(let review):
+                self.moviesRepository.getMovie(by: self.movieId) { (result) in
+                    self.viewContract.hideLoading()
+                    switch result {
+                    case .value(let movie):
+                        let viewModel = MovieDetailsControllerViewModelMapper(
+                            title: movie.title,
+                            posterURL: movie.posterURL,
+                            releaseDate: movie.releaseDate,
+                            genre: movie.genre,
+                            runtime: movie.runtime,
+                            ratings: movie.ratings,
+                            myReview: review,
+                            synopsis: movie.synopsis,
+                            director: movie.director,
+                            casting: movie.casting
+                            ).map()
+                        self.viewContract.configure(with: viewModel)
+                    case .error(let error):
+                        self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                    }
+                }
             case .error(let error):
                 self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
             }

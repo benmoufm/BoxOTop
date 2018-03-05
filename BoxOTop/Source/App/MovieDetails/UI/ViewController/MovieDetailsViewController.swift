@@ -82,6 +82,10 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
         present(alert, animated: true, completion: nil)
     }
 
+    func reloadCollectionView() {
+        ratingsCollectionView.reloadData()
+    }
+
     // MARK: - MovieDetailsCollectionViewDataSourceDelegate
 
     func addMyRating() {
