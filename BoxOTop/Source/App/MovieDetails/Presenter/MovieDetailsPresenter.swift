@@ -14,4 +14,5 @@ protocol MovieDetailsPresenterDelegate: class {
 
 protocol MovieDetailsPresenter: Startable {
     func addMyRating()
+    func reload()
 }

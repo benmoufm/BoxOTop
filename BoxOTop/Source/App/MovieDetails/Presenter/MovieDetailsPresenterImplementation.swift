@@ -39,6 +39,10 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
         delegate?.movieDetailsPresenter(self)
     }
 
+    func reload() {
+        computeAndDisplay()
+    }
+
     // MARK: - Private methods
 
     private func computeAndDisplay() {

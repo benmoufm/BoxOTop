@@ -27,13 +27,23 @@ class SharedViewController: UIViewController, Loadable {
         setup()
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if modalPresentationStyle == .overCurrentContext,
+            let presentingViewController = presentingViewController as? DismissViewControllerObserver {
+            presentingViewController.presentedViewControllerWillDisappear()
+        }
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     // MARK: - Loadable
