@@ -26,6 +26,13 @@
 "movie_details_add_review_cell_text" = "+";
 "movie_details_my_rating_source_text" = "My rating";
 
+// MOVIE REVIEW
+
+"movie_review_title_text" = "Submit your review";
+"movie_review_rating_label_text" = "Your rating : ";
+"movie_review_cancel_button_text" = "Cancel";
+"movie_review_submit_button_text" = "Submit";
+
 // ERRORS
 
 "custom_error_unexpected_json_format_text" = "Error. Unexpected JSON Format.";

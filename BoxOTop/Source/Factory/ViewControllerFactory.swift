@@ -35,4 +35,11 @@ final class ViewControllerFactory {
         movieDetailsViewController.presenter = presenter
         return movieDetailsViewController
     }
+
+    func movieReviewViewController() -> MovieReviewViewController {
+        let movieReviewViewController = MovieReviewViewController()
+        let presenter = MovieReviewPresenterImplementation(viewContract: movieReviewViewController)
+        movieReviewViewController.presenter = presenter
+        return movieReviewViewController
+    }
 }
