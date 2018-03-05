@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieDetailsCellViewModel {
-    let ratingSource: String
-    let stars: StarRaterViewModel
+enum MovieDetailsCellViewModel {
+    case ratingCell(RatingCellViewModel)
+    case plusCell(PlusCellViewModel)
 }

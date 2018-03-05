@@ -12,8 +12,10 @@ struct MovieDetailsCollectionViewModelMapper {
     let cells: [Rating]
 
     func map() -> MovieDetailsCollectionViewModel {
-        return MovieDetailsCollectionViewModel(cells:
-            cells.map { MovieDetailsCellViewModelMapper(rating: $0).map() }
-        )
+        var movieDetailsCellViewModel: [MovieDetailsCellViewModel] = cells.map {
+            return .ratingCell(RatingCellViewModelMapper(rating: $0).map())
+        }
+        movieDetailsCellViewModel.append(.plusCell(PlusCellViewModelMapper().map()))
+        return MovieDetailsCollectionViewModel(cells: movieDetailsCellViewModel)
     }
 }

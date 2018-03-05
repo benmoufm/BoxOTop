@@ -17,6 +17,7 @@ class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource
 
     func configure(_ collectionView: UICollectionView) {
         collectionView.register(class: RatingCollectionViewCell.self)
+        collectionView.register(class: PlusCollectionViewCell.self)
     }
 
     func update(with viewModel: MovieDetailsCollectionViewModel) {
@@ -30,10 +31,24 @@ class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RatingCollectionViewCell = collectionView.dequeueCell(at: indexPath)
-        cell.configure(with: viewModel.cells[indexPath.row])
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .ratingCell(let ratingCellViewModel):
+            let cell: RatingCollectionViewCell = collectionView.dequeueCell(at: indexPath)
+            cell.configure(with: ratingCellViewModel)
+            setupCell(cell: cell)
+            return cell
+        case .plusCell:
+            let cell: PlusCollectionViewCell = collectionView.dequeueCell(at: indexPath)
+            setupCell(cell: cell)
+            return cell
+        }
+    }
+
+    // MARK: - Private methods
+
+    private func setupCell(cell: UICollectionViewCell) {
         cell.backgroundColor = UIColor.mainColor.withAlphaComponent(0.2)
         cell.layer.cornerRadius = 5.0
-        return cell
     }
 }
