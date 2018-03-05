@@ -9,9 +9,14 @@
 import Foundation
 import UIKit
 
+protocol MovieDetailsCollectionViewDataSourceDelegate: class {
+    func addMyRating()
+}
+
 class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var viewModel: MovieDetailsCollectionViewModel = .empty
+    weak var delegate: MovieDetailsCollectionViewDataSourceDelegate?
 
     // MARK: - MovieDetailsCollectionViewDataSource
 
@@ -42,6 +47,16 @@ class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource
             let cell: PlusCollectionViewCell = collectionView.dequeueCell(at: indexPath)
             setupCell(cell: cell)
             return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .plusCell:
+            delegate?.addMyRating()
+        default:
+            break
         }
     }
 

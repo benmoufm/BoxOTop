@@ -32,6 +32,19 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
         computeAndDisplay()
     }
 
+    // MARK: - MovieDetailsPresenter
+
+    func addMyRating() {
+        dataRepository.save(with: movieId, rating: 0.5) { (result) in
+            switch result {
+            case .value:
+                break
+            case .error(let error):
+                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
+
     // MARK: - Private methods
 
     private func computeAndDisplay() {
