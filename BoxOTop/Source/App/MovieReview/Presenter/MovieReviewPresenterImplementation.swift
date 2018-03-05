@@ -11,6 +11,7 @@ import Foundation
 class MovieReviewPresenterImplementation: MovieReviewPresenter {
     private unowned let viewContract: MovieReviewViewContract
     weak var delegate: MovieReviewPresenterDelegate?
+    private var currentRating: Int = 0
 
     // MARK: LifeCycle
 
@@ -30,10 +31,15 @@ class MovieReviewPresenterImplementation: MovieReviewPresenter {
         delegate?.movieReviewPresenter(self)
     }
 
+    func updateRating(rating: Float) {
+        currentRating = Int(floorf(rating))
+        computeAndDisplayViewModel()
+    }
+
     // MARK: - Private methods
 
     private func computeAndDisplayViewModel() {
-        let viewModel = MovieReviewControllerViewModelMapper().map()
+        let viewModel = MovieReviewControllerViewModelMapper(currentRating: currentRating).map()
         viewContract.configure(with: viewModel)
     }
 }

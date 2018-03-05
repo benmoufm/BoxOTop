@@ -46,6 +46,10 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
         presenter?.dismissSubmitReview()
     }
 
+    @objc func ratingSliderDidChange() {
+        presenter?.updateRating(rating: ratingSlider.value)
+    }
+
     // MARK: - Private methods
 
     private func setupContainerView() {
@@ -61,6 +65,8 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
     private func setupRatingSlider() {
         ratingSlider.thumbTintColor = UIColor.mainColor
         ratingSlider.minimumTrackTintColor = UIColor.mainColor
+        ratingSlider.maximumValue = 100
+        ratingSlider.addTarget(self, action: #selector(ratingSliderDidChange), for: .valueChanged)
     }
 
     private func setupRatingLabel() {
