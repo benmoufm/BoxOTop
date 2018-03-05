@@ -14,13 +14,15 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
 
     private unowned let viewContract: MovieDetailsViewContract
     private let moviesRepository: MoviesRepository
+    private let dataRepository: DataRepository
     private let movieId: String
 
     // MARK: - Lifecycle
 
-    init(viewContract: MovieDetailsViewContract, moviesRepository: MoviesRepository, id: String) {
+    init(viewContract: MovieDetailsViewContract, moviesRepository: MoviesRepository, dataRepository: DataRepository, id: String) {
         self.viewContract = viewContract
         self.moviesRepository = moviesRepository
+        self.dataRepository = dataRepository
         self.movieId = id
     }
 

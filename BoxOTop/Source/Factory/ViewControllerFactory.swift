@@ -17,7 +17,7 @@ final class ViewControllerFactory {
         let movieSearchViewController = MovieSearchViewController()
         let presenter = MovieSearchPresenterImplementation(
             viewContract: movieSearchViewController,
-            moviesRepository: RepositoryFactory.instance.moviesRepository()
+            moviesRepository: RepositoryFactory.instance.moviesRepository
         )
         presenter.delegate = presenterDelegate
         movieSearchViewController.presenter = presenter
@@ -28,7 +28,8 @@ final class ViewControllerFactory {
         let movieDetailsViewController = MovieDetailsViewController()
         let presenter = MovieDetailsPresenterImplementation(
             viewContract: movieDetailsViewController,
-            moviesRepository: RepositoryFactory.instance.moviesRepository(),
+            moviesRepository: RepositoryFactory.instance.moviesRepository,
+            dataRepository: RepositoryFactory.instance.dataRepository,
             id: id
         )
         movieDetailsViewController.presenter = presenter
