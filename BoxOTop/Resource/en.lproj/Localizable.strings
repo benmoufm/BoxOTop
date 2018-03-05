@@ -23,6 +23,7 @@
 "movie_details_runtime_label_text" = "Runtime : ";
 "movie_details_synopsis_label_text" = "Synopsis : ";
 "movie_details_casting_label_text" = "Casting :";
+"movie_details_add_review_cell_text" = "+";
 
 // ERRORS
 

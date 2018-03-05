@@ -78,6 +78,7 @@
 		3CEAE2BE2047FAA000C132B6 /* RestSearchQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */; };
 		3CEAE2C02047FABD00C132B6 /* SearchQueryResultMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */; };
 		3CEAE2C220484FE400C132B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAE2C120484FE400C132B6 /* UIViewExtension.swift */; };
+		3CEAF402204D42CC00F97C3A /* PlusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF401204D42CC00F97C3A /* PlusCollectionViewCell.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,7 @@
 		3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSearchQueryResult.swift; sourceTree = "<group>"; };
 		3CEAE2BF2047FABD00C132B6 /* SearchQueryResultMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQueryResultMapper.swift; sourceTree = "<group>"; };
 		3CEAE2C120484FE400C132B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3CEAF401204D42CC00F97C3A /* PlusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCollectionViewCell.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				3C1CEA6C2049CC25007E1E25 /* RatingCollectionViewCell.swift */,
+				3CEAF401204D42CC00F97C3A /* PlusCollectionViewCell.swift */,
 				3C1CEA722049CDA8007E1E25 /* StarView.swift */,
 				3C1CEA782049D60B007E1E25 /* StarRaterView.swift */,
 			);
@@ -687,6 +690,7 @@
 				3CEAE2B82047EF8A00C132B6 /* LoadCellViewModelMapper.swift in Sources */,
 				3C1CEA612049C946007E1E25 /* UICollectionView+Registerable.swift in Sources */,
 				3C1CEA7D2049D635007E1E25 /* StarRaterViewModelMapper.swift in Sources */,
+				3CEAF402204D42CC00F97C3A /* PlusCollectionViewCell.swift in Sources */,
 				3C1CEA652049CB75007E1E25 /* MovieDetailsCollectionViewModelMapper.swift in Sources */,
 				3C5417ED204576B600C6C725 /* UITableView+Registerable.swift in Sources */,
 				3C5417CB204564BC00C6C725 /* MainCoordinator.swift in Sources */,
