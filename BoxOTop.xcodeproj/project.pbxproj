@@ -83,6 +83,8 @@
 		3CEAF406204D449900F97C3A /* PlusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF405204D449900F97C3A /* PlusCellViewModel.swift */; };
 		3CEAF408204D45AF00F97C3A /* PlusCellViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF407204D45AF00F97C3A /* PlusCellViewModelMapper.swift */; };
 		3CEAF40B204D49EC00F97C3A /* BoxOTop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF409204D49EC00F97C3A /* BoxOTop.xcdatamodeld */; };
+		3CEAF40D204D5DC700F97C3A /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF40C204D5DC700F97C3A /* DataRepository.swift */; };
+		3CEAF40F204D5E7600F97C3A /* DataRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF40E204D5E7600F97C3A /* DataRepositoryImplementation.swift */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +168,8 @@
 		3CEAF405204D449900F97C3A /* PlusCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCellViewModel.swift; sourceTree = "<group>"; };
 		3CEAF407204D45AF00F97C3A /* PlusCellViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCellViewModelMapper.swift; sourceTree = "<group>"; };
 		3CEAF40A204D49EC00F97C3A /* BoxOTop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BoxOTop.xcdatamodel; sourceTree = "<group>"; };
+		3CEAF40C204D5DC700F97C3A /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		3CEAF40E204D5E7600F97C3A /* DataRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepositoryImplementation.swift; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -268,12 +272,9 @@
 		3C5417B92045624B00C6C725 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3C5417F420458F6000C6C725 /* MoviesRepositoryImplementation.swift */,
+				3CEAF410204D5E7E00F97C3A /* RepositoryImplementation */,
 				3C4D312D204ADC7600A294D8 /* Mapper */,
-				3C5418002045A4FB00C6C725 /* RestMovie.swift */,
-				3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */,
-				3C74E98420498E100095689B /* RestMovieDetail.swift */,
-				3C74E98A204992C20095689B /* RestRating.swift */,
+				3CEAF411204D5E9500F97C3A /* RestObject */,
 				3CEAF409204D49EC00F97C3A /* BoxOTop.xcdatamodeld */,
 			);
 			path = Data;
@@ -438,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5417F220458F3D00C6C725 /* MoviesRepository.swift */,
+				3CEAF40C204D5DC700F97C3A /* DataRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -514,6 +516,26 @@
 				3C8CB98F20485B3D00ABB88C /* MovieDetailsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3CEAF410204D5E7E00F97C3A /* RepositoryImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				3C5417F420458F6000C6C725 /* MoviesRepositoryImplementation.swift */,
+				3CEAF40E204D5E7600F97C3A /* DataRepositoryImplementation.swift */,
+			);
+			path = RepositoryImplementation;
+			sourceTree = "<group>";
+		};
+		3CEAF411204D5E9500F97C3A /* RestObject */ = {
+			isa = PBXGroup;
+			children = (
+				3C5418002045A4FB00C6C725 /* RestMovie.swift */,
+				3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */,
+				3C74E98420498E100095689B /* RestMovieDetail.swift */,
+				3C74E98A204992C20095689B /* RestRating.swift */,
+			);
+			path = RestObject;
 			sourceTree = "<group>";
 		};
 		CF0F7E75ED257535E3502F7A /* Frameworks */ = {
@@ -668,6 +690,7 @@
 			files = (
 				3C8CB99020485B3D00ABB88C /* MovieDetailsViewController.swift in Sources */,
 				3C8CB99620485B7500ABB88C /* MovieDetailsPresenter.swift in Sources */,
+				3CEAF40F204D5E7600F97C3A /* DataRepositoryImplementation.swift in Sources */,
 				3C8CB98E20485B2800ABB88C /* MovieDetailsViewContract.swift in Sources */,
 				3C5417F02045787300C6C725 /* Movie.swift in Sources */,
 				3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */,
@@ -689,6 +712,7 @@
 				3C1CEA6F2049CC6D007E1E25 /* MovieDetailsCollectionViewDataSource.swift in Sources */,
 				3CEAF406204D449900F97C3A /* PlusCellViewModel.swift in Sources */,
 				3CEAF408204D45AF00F97C3A /* PlusCellViewModelMapper.swift in Sources */,
+				3CEAF40D204D5DC700F97C3A /* DataRepository.swift in Sources */,
 				3C74E98320498CE70095689B /* MovieDetail.swift in Sources */,
 				3C8CB99220485B5200ABB88C /* MovieDetailsControllerViewModel.swift in Sources */,
 				3C5418012045A4FB00C6C725 /* RestMovie.swift in Sources */,
