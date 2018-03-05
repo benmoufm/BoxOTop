@@ -24,7 +24,7 @@ final class ViewControllerFactory {
         return movieSearchViewController
     }
 
-    func movieDetailsViewController(id: String) -> MovieDetailsViewController {
+    func movieDetailsViewController(id: String, presenterDelegate: MovieDetailsPresenterDelegate) -> MovieDetailsViewController {
         let movieDetailsViewController = MovieDetailsViewController()
         let presenter = MovieDetailsPresenterImplementation(
             viewContract: movieDetailsViewController,
@@ -32,6 +32,7 @@ final class ViewControllerFactory {
             dataRepository: RepositoryFactory.instance.dataRepository,
             id: id
         )
+        presenter.delegate = presenterDelegate
         movieDetailsViewController.presenter = presenter
         return movieDetailsViewController
     }

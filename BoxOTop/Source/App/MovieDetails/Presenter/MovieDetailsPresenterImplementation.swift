@@ -9,6 +9,7 @@
 import Foundation
 
 class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
+    var delegate: MovieDetailsPresenterDelegate?
 
     // MARK: - Private properties
 
@@ -35,15 +36,7 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     // MARK: - MovieDetailsPresenter
 
     func addMyRating() {
-        dataRepository.save(with: movieId, rating: 0.5) { (result) in
-            switch result {
-            case .value:
-                self.computeAndDisplay()
-                self.viewContract.reloadCollectionView()
-            case .error(let error):
-                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
-            }
-        }
+        delegate?.movieDetailsPresenter(self)
     }
 
     // MARK: - Private methods

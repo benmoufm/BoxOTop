@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol MovieDetailsPresenterDelegate: class {
+    func movieDetailsPresenter(_ presenter: MovieDetailsPresenter)
+}
+
 protocol MovieDetailsPresenter: Startable {
     func addMyRating()
 }
