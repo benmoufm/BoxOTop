@@ -82,6 +82,7 @@
 		3CEAF404204D448600F97C3A /* RatingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF403204D448600F97C3A /* RatingCellViewModel.swift */; };
 		3CEAF406204D449900F97C3A /* PlusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF405204D449900F97C3A /* PlusCellViewModel.swift */; };
 		3CEAF408204D45AF00F97C3A /* PlusCellViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF407204D45AF00F97C3A /* PlusCellViewModelMapper.swift */; };
+		3CEAF40B204D49EC00F97C3A /* BoxOTop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CEAF409204D49EC00F97C3A /* BoxOTop.xcdatamodeld */; };
 		6BCC604D2E894D462ED695D7 /* Pods_BoxOTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 		3CEAF403204D448600F97C3A /* RatingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCellViewModel.swift; sourceTree = "<group>"; };
 		3CEAF405204D449900F97C3A /* PlusCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCellViewModel.swift; sourceTree = "<group>"; };
 		3CEAF407204D45AF00F97C3A /* PlusCellViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCellViewModelMapper.swift; sourceTree = "<group>"; };
+		3CEAF40A204D49EC00F97C3A /* BoxOTop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BoxOTop.xcdatamodel; sourceTree = "<group>"; };
 		7240B813896E0D5E9C69A31F /* Pods-BoxOTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxOTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxOTop/Pods-BoxOTop.debug.xcconfig"; sourceTree = "<group>"; };
 		D99B5695642F1136F026A439 /* Pods_BoxOTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxOTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -272,6 +274,7 @@
 				3CEAE2BD2047FAA000C132B6 /* RestSearchQueryResult.swift */,
 				3C74E98420498E100095689B /* RestMovieDetail.swift */,
 				3C74E98A204992C20095689B /* RestRating.swift */,
+				3CEAF409204D49EC00F97C3A /* BoxOTop.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				3C5417F02045787300C6C725 /* Movie.swift in Sources */,
 				3C54177520449D6900C6C725 /* MovieSearchViewController.swift in Sources */,
 				3CEAE2BC2047F90900C132B6 /* SearchQueryResult.swift in Sources */,
+				3CEAF40B204D49EC00F97C3A /* BoxOTop.xcdatamodeld in Sources */,
 				3C5417E0204570EB00C6C725 /* MovieSearchTableViewModelMapper.swift in Sources */,
 				3C74E98B204992C20095689B /* RestRating.swift in Sources */,
 				3C4D313A204C47B700A294D8 /* SharedViewController.swift in Sources */,
@@ -921,6 +925,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3CEAF409204D49EC00F97C3A /* BoxOTop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3CEAF40A204D49EC00F97C3A /* BoxOTop.xcdatamodel */,
+			);
+			currentVersion = 3CEAF40A204D49EC00F97C3A /* BoxOTop.xcdatamodel */;
+			path = BoxOTop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3C54176720449D6900C6C725 /* Project object */;
 }
