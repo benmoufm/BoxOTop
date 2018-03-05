@@ -40,6 +40,12 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
         submitButton.setTitle(viewModel.submitButtonTitle, for: .normal)
     }
 
+    // MARK: - @objc methods
+
+    @objc func cancelButtonPressed() {
+        presenter?.dismissSubmitReview()
+    }
+
     // MARK: - Private methods
 
     private func setupContainerView() {
@@ -73,6 +79,7 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
     private func setupCancelButton() {
         cancelButton.setTitleColor(UIColor.mainColor, for: .normal)
         cancelButton.tintColor = UIColor.mainColor
+        cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
     }
 
     private func setupSubmitButton() {

@@ -37,9 +37,10 @@ final class ViewControllerFactory {
         return movieDetailsViewController
     }
 
-    func movieReviewViewController() -> MovieReviewViewController {
+    func movieReviewViewController(presenterDelegate: MovieReviewPresenterDelegate) -> MovieReviewViewController {
         let movieReviewViewController = MovieReviewViewController()
         let presenter = MovieReviewPresenterImplementation(viewContract: movieReviewViewController)
+        presenter.delegate = presenterDelegate
         movieReviewViewController.presenter = presenter
         return movieReviewViewController
     }

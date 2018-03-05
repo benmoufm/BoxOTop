@@ -8,6 +8,10 @@
 
 import Foundation
 
-protocol MovieReviewPresenter: Startable {
+protocol MovieReviewPresenterDelegate: class {
+    func movieReviewPresenter(_ presenter: MovieReviewPresenter)
+}
 
+protocol MovieReviewPresenter: Startable {
+    func dismissSubmitReview()
 }

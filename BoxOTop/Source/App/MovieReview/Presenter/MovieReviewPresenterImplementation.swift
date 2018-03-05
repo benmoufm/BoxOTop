@@ -10,6 +10,7 @@ import Foundation
 
 class MovieReviewPresenterImplementation: MovieReviewPresenter {
     private unowned let viewContract: MovieReviewViewContract
+    weak var delegate: MovieReviewPresenterDelegate?
 
     // MARK: LifeCycle
 
@@ -21,6 +22,12 @@ class MovieReviewPresenterImplementation: MovieReviewPresenter {
 
     func start() {
         computeAndDisplayViewModel()
+    }
+
+    // MARK: - MovieReviewPresenter
+
+    func dismissSubmitReview() {
+        delegate?.movieReviewPresenter(self)
     }
 
     // MARK: - Private methods
