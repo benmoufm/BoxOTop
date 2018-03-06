@@ -10,4 +10,5 @@ import Foundation
 
 protocol MovieReviewViewContract: class {
     func configure(with viewModel: MovieReviewControllerViewModel)
+    func displayAlertPopUp(title: String, message: String)
 }
