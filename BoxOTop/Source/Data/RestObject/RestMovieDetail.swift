@@ -12,7 +12,7 @@ import SwiftyJSON
 struct RestMovieDetail {
     let id: String
     let title: String
-    let posterURL: String
+    let posterURL: URL?
     let releaseDate: String
     let director: String
     let genre: String
@@ -38,7 +38,7 @@ struct RestMovieDetail {
                 else { throw CustomErrors.unexpectedJSONFormat }
             self.id = id
             self.title = title
-            self.posterURL = posterURL
+            self.posterURL = URL(string: posterURL)
             self.releaseDate = releaseDate
             self.director = director
             self.genre = genre

@@ -44,7 +44,7 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
 
     func configure(with viewModel: MovieDetailsControllerViewModel) {
         titleLabel.text = viewModel.title
-        if let url = URL(string: viewModel.posterURL) {
+        if let url = viewModel.posterURL {
             posterImageView.sd_setImage(
                 with: url,
                 placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),

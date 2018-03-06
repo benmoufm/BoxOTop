@@ -13,7 +13,7 @@ struct RestMovie {
     let id: String
     let title: String
     let year: String
-    let posterURL: String
+    let posterURL: URL?
 
     init(json: JSON) throws {
         guard
@@ -25,6 +25,6 @@ struct RestMovie {
         self.id = id
         self.title = title
         self.year = year
-        self.posterURL = posterURL
+        self.posterURL = URL(string: posterURL)
     }
 }

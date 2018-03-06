@@ -34,7 +34,7 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: - MovieTableViewCell
 
     func configure(with viewModel: MovieCellViewModel) {
-        if let url = URL(string: viewModel.posterURL) {
+        if let url = viewModel.posterURL {
             posterImageView.sd_setImage(
                 with: url,
                 placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),
