@@ -47,7 +47,7 @@ class MovieReviewPresenterImplementation: MovieReviewPresenter {
             case .value:
                 self.delegate?.movieReviewPresenter(self)
             case .error(let error):
-                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                self.viewContract.displayAlertPopUp(error: error)
             }
         }
     }

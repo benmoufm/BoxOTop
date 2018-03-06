@@ -37,4 +37,4 @@
 
 "custom_error_unexpected_json_format_text" = "Error. Unexpected JSON Format.";
 "custom_error_search_query_nil_text" = "Error. No search query.";
-"error_query_too_short_text" = "Error. Query too short.";
+"custom_error_query_too_short_text" = "Error. Query too short.";

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SharedViewController: UIViewController, Loadable {
+class SharedViewController: UIViewController, Loadable, Alertable {
 
     // MARK: - Private properties
 
@@ -54,6 +54,21 @@ class SharedViewController: UIViewController, Loadable {
 
     func hideLoading() {
         loadingView.hideLoading()
+    }
+
+    // MARK: - Alertable
+
+    func displayAlertPopUp(error: NSError) {
+        let alert = UIAlertController(
+            title: "Info",
+            message: error.localizedDescription,
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        alert.addAction(UIAlertAction(
+            title: "Ok",
+            style: UIAlertActionStyle.default, handler: nil)
+        )
+        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Private methods

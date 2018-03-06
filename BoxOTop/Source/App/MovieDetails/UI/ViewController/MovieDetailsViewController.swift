@@ -69,19 +69,6 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
         ratingsCollectionView.reloadData()
     }
 
-    func displayAlertPopUp(title: String, message: String) {
-        let alert = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: UIAlertControllerStyle.alert
-        )
-        alert.addAction(UIAlertAction(
-            title: "Ok",
-            style: UIAlertActionStyle.default, handler: nil)
-        )
-        present(alert, animated: true, completion: nil)
-    }
-
     func reloadCollectionView() {
         ratingsCollectionView.reloadData()
     }

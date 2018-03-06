@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol MovieDetailsViewContract: class, Loadable {
+protocol MovieDetailsViewContract: class, Loadable, Alertable {
     func configure(with viewModel: MovieDetailsControllerViewModel)
-    func displayAlertPopUp(title: String, message: String)
     func reloadCollectionView()
 }
