@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract, MovieDetailsCollectionViewDataSourceDelegate {
+class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract, MovieDetailsCollectionViewDataSourceDelegate, DismissViewControllerObserver {
 
     var presenter: MovieDetailsPresenter?
 
@@ -90,6 +90,12 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
 
     func addMyRating() {
         presenter?.addMyRating()
+    }
+
+    // MARK: - DismissViewControllerObserver
+
+    func presentedViewControllerWillDisappear() {
+        presenter?.reload()
     }
 
     // MARK: - Private methods
