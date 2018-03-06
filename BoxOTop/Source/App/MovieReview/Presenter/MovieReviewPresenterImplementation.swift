@@ -40,6 +40,18 @@ class MovieReviewPresenterImplementation: MovieReviewPresenter {
         computeAndDisplayViewModel()
     }
 
+    func dismissSubmitReview(with rating: Float) {
+        let rating = Float(currentRating) / 100
+        dataRepository.save(with: movieId, rating: rating) { (result) in
+            switch result {
+            case .value:
+                self.delegate?.movieReviewPresenter(self)
+            case .error(let error):
+                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
+
     // MARK: - Private methods
 
     private func computeAndDisplayViewModel() {

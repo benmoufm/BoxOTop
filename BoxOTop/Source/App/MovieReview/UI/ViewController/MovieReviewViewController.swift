@@ -63,6 +63,10 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
         presenter?.updateRating(rating: ratingSlider.value)
     }
 
+    @objc func submitButtonPressed() {
+        presenter?.dismissSubmitReview(with: ratingSlider.value)
+    }
+
     // MARK: - Private methods
 
     private func setupContainerView() {
@@ -104,6 +108,7 @@ class MovieReviewViewController: SharedViewController, MovieReviewViewContract {
     private func setupSubmitButton() {
         submitButton.setTitleColor(UIColor.mainColor, for: .normal)
         submitButton.tintColor = UIColor.mainColor
+        submitButton.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
     }
 
     private func setupLayout() {

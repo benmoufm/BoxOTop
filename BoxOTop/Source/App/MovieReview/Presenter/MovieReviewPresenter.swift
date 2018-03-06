@@ -14,5 +14,6 @@ protocol MovieReviewPresenterDelegate: class {
 
 protocol MovieReviewPresenter: Startable {
     func dismissSubmitReview()
+    func dismissSubmitReview(with rating: Float)
     func updateRating(rating: Float)
 }
