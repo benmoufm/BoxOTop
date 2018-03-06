@@ -11,7 +11,7 @@ import Foundation
 struct MovieDetail {
     let id: String
     let title: String
-    let posterURL: String
+    let posterURL: URL?
     let releaseDate: String
     let director: String
     let genre: String
@@ -23,7 +23,7 @@ struct MovieDetail {
     init(
         id: String,
         title: String,
-        posterURL: String,
+        posterURL: URL?,
         releaseDate: String,
         director: String,
         genre: String,

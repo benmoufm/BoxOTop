@@ -10,7 +10,7 @@ import Foundation
 
 struct MovieDetailsControllerViewModelMapper {
     let title: String
-    let posterURL: String
+    let posterURL: URL?
     let releaseDate: String
     let genre: String
     let runtime: String

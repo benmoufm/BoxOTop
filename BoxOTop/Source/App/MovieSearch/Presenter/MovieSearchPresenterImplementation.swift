@@ -31,7 +31,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
 
     func searchMovies(with query: String) {
         if query.count < 2 {
-            viewContract.displayAlertPopUp(title: "Error", message: "error_query_too_short_text".localized)
+            viewContract.displayAlertPopUp(error: CustomErrors.queryTooShort as NSError)
         } else {
             viewContract.displayLoading()
             moviesRepository.getMovies(with: query) { (result) in
@@ -42,7 +42,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                     self.computeAndDisplayViewModel()
                     self.viewContract.scrollWhenNewQuery()
                 case .error(let error):
-                    self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                    self.viewContract.displayAlertPopUp(error: error)
                 }
             }
         }
@@ -57,7 +57,7 @@ class MovieSearchPresenterImplementation: MovieSearchPresenter {
                 self.computeAndDisplayViewModel()
                 self.viewContract.reloadTableView()
             case .error(let error):
-                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                self.viewContract.displayAlertPopUp(error: error)
             }
         }
     }

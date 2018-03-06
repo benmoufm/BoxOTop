@@ -13,7 +13,7 @@ protocol MovieDetailsCollectionViewDataSourceDelegate: class {
     func addMyRating()
 }
 
-class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
+class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var viewModel: MovieDetailsCollectionViewModel = .empty
     weak var delegate: MovieDetailsCollectionViewDataSourceDelegate?
@@ -58,6 +58,12 @@ class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource
         default:
             break
         }
+    }
+
+    // MARK: - UICollectionViewDelegateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.bounds.width / 2.0) - 15, height: 50)
     }
 
     // MARK: - Private methods

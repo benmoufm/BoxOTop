@@ -44,7 +44,7 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
 
     func configure(with viewModel: MovieDetailsControllerViewModel) {
         titleLabel.text = viewModel.title
-        if let url = URL(string: viewModel.posterURL) {
+        if let url = viewModel.posterURL {
             posterImageView.sd_setImage(
                 with: url,
                 placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),
@@ -67,19 +67,6 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
         castingTextLabel.text = viewModel.casting
         dataSource.update(with: viewModel.ratings)
         ratingsCollectionView.reloadData()
-    }
-
-    func displayAlertPopUp(title: String, message: String) {
-        let alert = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: UIAlertControllerStyle.alert
-        )
-        alert.addAction(UIAlertAction(
-            title: "Ok",
-            style: UIAlertActionStyle.default, handler: nil)
-        )
-        present(alert, animated: true, completion: nil)
     }
 
     func reloadCollectionView() {
@@ -161,7 +148,6 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
 
     private func setupRatingsCollectionView() {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 180, height: 50)
         ratingsCollectionView.backgroundColor = UIColor.backgroundColor
         dataSource.configure(ratingsCollectionView)
         ratingsCollectionView.delegate = dataSource

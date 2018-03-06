@@ -68,11 +68,11 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
                             ).map()
                         self.viewContract.configure(with: viewModel)
                     case .error(let error):
-                        self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                        self.viewContract.displayAlertPopUp(error: error)
                     }
                 }
             case .error(let error):
-                self.viewContract.displayAlertPopUp(title: "Error", message: error.localizedDescription)
+                self.viewContract.displayAlertPopUp(error: error)
             }
         }
     }

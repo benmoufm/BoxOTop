@@ -34,7 +34,7 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: - MovieTableViewCell
 
     func configure(with viewModel: MovieCellViewModel) {
-        if let url = URL(string: viewModel.posterURL) {
+        if let url = viewModel.posterURL {
             posterImageView.sd_setImage(
                 with: url,
                 placeholderImage: #imageLiteral(resourceName: "posterPlaceholder"),
@@ -53,6 +53,8 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: - Private methods
 
     private func setupPosterImageView() {
+        posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
+        posterImageView.tintColor = UIColor.mainColor
         posterImageView.contentMode = .scaleAspectFit
     }
 

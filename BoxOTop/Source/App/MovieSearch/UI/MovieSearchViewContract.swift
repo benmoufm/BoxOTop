@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol MovieSearchViewContract: class, Loadable {
+protocol MovieSearchViewContract: class, Loadable, Alertable {
     func configure(with viewModel: MovieSearchControllerViewModel)
-    func displayAlertPopUp(title: String, message: String)
     func scrollWhenNewQuery()
     func reloadTableView()
 }

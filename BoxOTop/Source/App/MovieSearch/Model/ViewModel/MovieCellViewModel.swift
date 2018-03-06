@@ -10,7 +10,7 @@ import Foundation
 
 struct MovieCellViewModel {
     let id: String
-    let posterURL: String
+    let posterURL: URL?
     let title: String
     let year: String
 }
