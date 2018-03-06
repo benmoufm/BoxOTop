@@ -36,7 +36,7 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     // MARK: - MovieDetailsPresenter
 
     func addMyRating() {
-        delegate?.movieDetailsPresenter(self)
+        delegate?.movieDetailsPresenter(self, id: movieId)
     }
 
     func reload() {

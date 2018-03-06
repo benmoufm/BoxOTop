@@ -34,8 +34,11 @@ class MainCoordinator: Coordinator, MovieSearchPresenterDelegate, MovieDetailsPr
 
     // MARK: - MovieDetailsPresenterDelegate
 
-    func movieDetailsPresenter(_ presenter: MovieDetailsPresenter) {
-        let movieReviewViewController = ViewControllerFactory.instance.movieReviewViewController(presenterDelegate: self)
+    func movieDetailsPresenter(_ presenter: MovieDetailsPresenter, id: String) {
+        let movieReviewViewController = ViewControllerFactory.instance.movieReviewViewController(
+            id: id,
+            presenterDelegate: self
+        )
         movieReviewViewController.modalPresentationStyle = .overCurrentContext
         navigationController.present(movieReviewViewController, animated: true)
     }

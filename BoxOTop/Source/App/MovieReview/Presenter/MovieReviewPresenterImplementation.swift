@@ -12,11 +12,15 @@ class MovieReviewPresenterImplementation: MovieReviewPresenter {
     private unowned let viewContract: MovieReviewViewContract
     weak var delegate: MovieReviewPresenterDelegate?
     private var currentRating: Int = 0
+    private let dataRepository: DataRepository
+    private let movieId: String
 
     // MARK: LifeCycle
 
-    init(viewContract: MovieReviewViewContract) {
+    init(viewContract: MovieReviewViewContract, dataRepository: DataRepository, movieId: String) {
         self.viewContract = viewContract
+        self.dataRepository = dataRepository
+        self.movieId = movieId
     }
 
     // MARK: - Startable
