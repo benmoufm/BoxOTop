@@ -33,7 +33,9 @@ class MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     // MARK: - Private methods
 
     private func computeAndDisplay() {
+        viewContract.displayLoading()
         moviesRepository.getMovie(by: movieId) { (result) in
+            self.viewContract.hideLoading()
             switch result {
             case .value(let movie):
                 let viewModel = MovieDetailsControllerViewModelMapper(

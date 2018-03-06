@@ -56,6 +56,7 @@ class SharedViewController: UIViewController, Loadable {
     private func setupLayout() {
         view.addSubview(loadingView)
         loadingView.pinToSuperView(edges: .all, insets: .zero)
+        loadingView.layer.zPosition = 1
     }
 
     private func setup() {
