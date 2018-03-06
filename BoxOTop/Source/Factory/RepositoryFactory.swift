@@ -11,8 +11,6 @@ import Foundation
 final class RepositoryFactory {
 
     static let instance = RepositoryFactory()
-
-    func moviesRepository() -> MoviesRepository {
-        return MoviesRepositoryImplementation()
-    }
+    private(set) lazy var moviesRepository: MoviesRepository = MoviesRepositoryImplementation()
+    private(set) lazy var dataRepository: DataRepository = DataRepositoryImplementation()
 }

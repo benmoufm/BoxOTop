@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract {
+class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract, MovieDetailsCollectionViewDataSourceDelegate, DismissViewControllerObserver {
 
     var presenter: MovieDetailsPresenter?
 
@@ -82,6 +82,22 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
         present(alert, animated: true, completion: nil)
     }
 
+    func reloadCollectionView() {
+        ratingsCollectionView.reloadData()
+    }
+
+    // MARK: - MovieDetailsCollectionViewDataSourceDelegate
+
+    func addMyRating() {
+        presenter?.addMyRating()
+    }
+
+    // MARK: - DismissViewControllerObserver
+
+    func presentedViewControllerWillDisappear() {
+        presenter?.reload()
+    }
+
     // MARK: - Private methods
 
     private func setupNavigationBar() {
@@ -150,6 +166,7 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
         dataSource.configure(ratingsCollectionView)
         ratingsCollectionView.delegate = dataSource
         ratingsCollectionView.dataSource = dataSource
+        dataSource.delegate = self
     }
 
     private func setupLayout() {

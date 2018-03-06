@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct MovieDetailsCellViewModelMapper {
+struct RatingCellViewModelMapper {
     let rating: Rating
 
-    func map() -> MovieDetailsCellViewModel {
-        return MovieDetailsCellViewModel(
+    func map() -> RatingCellViewModel {
+        return RatingCellViewModel(
             ratingSource: rating.source,
             stars: StarRaterViewModelMapper(starNumber: 5, rating: rating.value).map()
         )

@@ -30,7 +30,7 @@ class RatingCollectionViewCell: UICollectionViewCell {
 
     // MARK: - RatingCell
 
-    func configure(with viewModel: MovieDetailsCellViewModel) {
+    func configure(with viewModel: RatingCellViewModel) {
         sourceLabel.text = viewModel.ratingSource
         starRater.configure(with: viewModel.stars)
     }

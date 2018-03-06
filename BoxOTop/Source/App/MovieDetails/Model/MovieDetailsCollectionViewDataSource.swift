@@ -9,14 +9,20 @@
 import Foundation
 import UIKit
 
+protocol MovieDetailsCollectionViewDataSourceDelegate: class {
+    func addMyRating()
+}
+
 class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var viewModel: MovieDetailsCollectionViewModel = .empty
+    weak var delegate: MovieDetailsCollectionViewDataSourceDelegate?
 
     // MARK: - MovieDetailsCollectionViewDataSource
 
     func configure(_ collectionView: UICollectionView) {
         collectionView.register(class: RatingCollectionViewCell.self)
+        collectionView.register(class: PlusCollectionViewCell.self)
     }
 
     func update(with viewModel: MovieDetailsCollectionViewModel) {
@@ -30,10 +36,34 @@ class MovieDetailsCollectionViewDataSource: NSObject, UICollectionViewDataSource
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RatingCollectionViewCell = collectionView.dequeueCell(at: indexPath)
-        cell.configure(with: viewModel.cells[indexPath.row])
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .ratingCell(let ratingCellViewModel):
+            let cell: RatingCollectionViewCell = collectionView.dequeueCell(at: indexPath)
+            cell.configure(with: ratingCellViewModel)
+            setupCell(cell: cell)
+            return cell
+        case .plusCell:
+            let cell: PlusCollectionViewCell = collectionView.dequeueCell(at: indexPath)
+            setupCell(cell: cell)
+            return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .plusCell:
+            delegate?.addMyRating()
+        default:
+            break
+        }
+    }
+
+    // MARK: - Private methods
+
+    private func setupCell(cell: UICollectionViewCell) {
         cell.backgroundColor = UIColor.mainColor.withAlphaComponent(0.2)
         cell.layer.cornerRadius = 5.0
-        return cell
     }
 }
