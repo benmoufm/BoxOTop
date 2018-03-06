@@ -53,6 +53,8 @@ class MovieTableViewCell: UITableViewCell {
     // MARK: - Private methods
 
     private func setupPosterImageView() {
+        posterImageView.image = #imageLiteral(resourceName: "posterPlaceholder")
+        posterImageView.tintColor = UIColor.mainColor
         posterImageView.contentMode = .scaleAspectFit
     }
 
