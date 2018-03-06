@@ -12,6 +12,7 @@ enum CustomErrors: LocalizedError {
     case unexpectedJSONFormat
     case searchQueryNull
     case queryTooShort
+    case noResult
 
     public var errorDescription: String? {
         switch self {
@@ -21,6 +22,8 @@ enum CustomErrors: LocalizedError {
             return "custom_error_search_query_nil_text".localized
         case .queryTooShort:
             return "custom_error_query_too_short_text".localized
+        case .noResult:
+            return "custom_error_no_result_text".localized
         }
     }
 }
