@@ -41,7 +41,13 @@ struct RestMovieDetail {
         self.director = director
         self.genre = genre
         self.runtime = runtime
-        self.ratings = try ratings.map { try RestRating(json: $0) }
+        self.ratings = ratings.map {
+            do {
+                return try RestRating(json: $0)
+            } catch {
+                return nil
+            }
+            }.flatMap { $0 }
         self.synopsis = synopsis
         self.casting = casting
     }
