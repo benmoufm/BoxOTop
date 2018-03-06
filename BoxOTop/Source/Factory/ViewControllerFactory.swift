@@ -13,13 +13,25 @@ final class ViewControllerFactory {
 
     private init() {}
 
-    func movieSearchViewController() -> MovieSearchViewController {
+    func movieSearchViewController(presenterDelegate: MovieSearchPresenterDelegate) -> MovieSearchViewController {
         let movieSearchViewController = MovieSearchViewController()
         let presenter = MovieSearchPresenterImplementation(
             viewContract: movieSearchViewController,
             moviesRepository: RepositoryFactory.instance.moviesRepository()
         )
+        presenter.delegate = presenterDelegate
         movieSearchViewController.presenter = presenter
         return movieSearchViewController
+    }
+
+    func movieDetailsViewController(id: String) -> MovieDetailsViewController {
+        let movieDetailsViewController = MovieDetailsViewController()
+        let presenter = MovieDetailsPresenterImplementation(
+            viewContract: movieDetailsViewController,
+            moviesRepository: RepositoryFactory.instance.moviesRepository(),
+            id: id
+        )
+        movieDetailsViewController.presenter = presenter
+        return movieDetailsViewController
     }
 }

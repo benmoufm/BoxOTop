@@ -19,10 +19,12 @@ extension UIColor {
     static let darkBackgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
     static let unevenMovieSearchTableViewCellColor = UIColor(red: 173/255, green: 209/255, blue: 158/255, alpha: 0.5)
     static let evenMovieSearchTableViewCellColor = UIColor.clear
+    static let ratingCollectionViewCellColor = UIColor.mainColor.withAlphaComponent(0.2)
 
     // MARK: - Text colors
 
     static let navigationBarTextColor = UIColor.white
     static let titleColor = UIColor.black
     static let subtitleColor = UIColor.darkText
+    static let lightGreyTextColor = UIColor.lightGray
 }

@@ -9,19 +9,26 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, MovieSearchPresenterDelegate {
 
     let window: UIWindow
     let navigationController: UINavigationController
 
     init(window: UIWindow) {
         self.window = window
-        self.navigationController = UINavigationController()
+        self.navigationController = SharedNavigationController()
     }
 
     func start() {
-        let movieSearchViewController = ViewControllerFactory.instance.movieSearchViewController()
+        let movieSearchViewController = ViewControllerFactory.instance.movieSearchViewController(presenterDelegate: self)
         navigationController.pushViewController(movieSearchViewController, animated: false)
         window.rootViewController = navigationController
+    }
+
+    // MARK: - MovieSearchPresenterDelegate
+
+    func movieSearchPresenter(_ presenter: MovieSearchPresenter, id: String) {
+        let movieDetailsViewController = ViewControllerFactory.instance.movieDetailsViewController(id: id)
+        navigationController.pushViewController(movieDetailsViewController, animated: true)
     }
 }

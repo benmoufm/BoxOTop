@@ -62,4 +62,14 @@ class MoviesRepositoryImplementation: MoviesRepository {
             completion?(searchResult)
         }
     }
+
+    func getMovie(by id: String, _ completion: ((Result<MovieDetail>) -> Void)?) {
+        let httpRequest = HttpRequest(parameters: ["i": id])
+        httpManager.execute(httpRequest: httpRequest) { (result) in
+            let movieResult = result.map {
+                return try MovieDetailMapper(restMovieDetail: RestMovieDetail(json: $0)).map()
+            }
+            completion?(movieResult)
+        }
+    }
 }
