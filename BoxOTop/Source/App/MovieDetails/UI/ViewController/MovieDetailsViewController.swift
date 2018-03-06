@@ -148,7 +148,6 @@ class MovieDetailsViewController: SharedViewController, MovieDetailsViewContract
 
     private func setupRatingsCollectionView() {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 180, height: 50)
         ratingsCollectionView.backgroundColor = UIColor.backgroundColor
         dataSource.configure(ratingsCollectionView)
         ratingsCollectionView.delegate = dataSource
